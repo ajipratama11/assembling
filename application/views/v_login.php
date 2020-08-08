@@ -8,7 +8,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
-
+      <?php echo $this->session->flashdata('message'); ?>
       <form action="<?= base_url('Login/aksi_login'); ?>" method="post">
         <div class="form-group has-feedback">
           <input type="text" class="form-control" placeholder="Usename" name="username">
@@ -19,9 +19,9 @@
         <div class="row">
           <div class="col-8">
             <div class="checkbox icheck">
-              <label>
+              <!-- <label>
                 <input type="checkbox"> Remember Me
-              </label>
+              </label> -->
             </div>
           </div>
           <!-- /.col -->
