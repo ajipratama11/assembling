@@ -7,15 +7,15 @@ class Login extends CI_Controller{
 		parent::__construct();		
 		$this->load->model('M_login');
 		$this->load->helper(array('url'));
-		if($this->session->userdata('status') == "admin"){
-			echo "<script>
-                alert('Anda sudah login');
-                window.location.href = '".base_url('Admin/Beranda')."';
-            </script>";//Url tujuan
-		}
+		// if($this->session->userdata('status') == "admin"){
+		// 	echo "<script>
+        //         alert('Anda sudah login');
+        //         window.location.href = '".base_url('Admin/Beranda')."';
+        //     </script>";//Url tujuan
+		// }
 	}
 	function index(){
-		$this->load->view('Admin/v_login');
+		$this->load->view('v_login');
 	}
 	function aksi_login(){
 		$username = $this->input->post('username');
