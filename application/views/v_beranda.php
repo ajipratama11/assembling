@@ -598,4 +598,22 @@
   <!-- /.content-wrapper -->
  <?php $this->load->view('templates/footer') ?>
 </body>
+<!-- <input type="radio" id="radio" name="textField" />
+<textarea rows="4" cols="30" id="texta"></textarea>
+<input type="submit" value="next" /> -->
 </html>
+
+<script>
+    $(document).ready(function () {
+    $('input[type="submit"]').attr('disabled', true);
+    $('input[type="text"],textarea').on('keyup', function () {
+        var textarea_value = $("#texta").val();
+        var text_value = $('input[name="textField"]').prop('checked');
+        if (textarea_value != '' && text_value == true) {
+            $('input[type="submit"]').attr('disabled', false);
+        } else {
+            $('input[type="submit"]').attr('disabled', true);
+        }
+    });
+});
+</script>
