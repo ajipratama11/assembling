@@ -25,4 +25,12 @@ class Akun extends CI_Controller
     public function admin(){
         redirect('Admin/Beranda');
     }
+    public function tambahAkun()
+    {
+        if ($this->input->post('submit')) {
+            $this->M_Gtk->addAkun();
+            redirect('Akun');
+        }
+        $this->load->view('v_tambahAkun');
+    }
 }
