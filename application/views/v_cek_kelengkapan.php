@@ -212,4 +212,3 @@ $(function () {
   $("input:radio[name*='textField6']").on("click change", checkProgress);
 });
 </script>
-

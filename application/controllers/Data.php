@@ -20,7 +20,10 @@ class Data extends CI_Controller
     public function index(){
         $this->load->view('v_beranda');
     }
-    public function admin(){
-        redirect('Admin/Beranda');
+    public function dataterhapus(){
+        $this->load->view('v_data_terhapus');
+    }
+    public function formterhapus(){
+        $this->load->view('v_form_terhapus');
     }
 }
