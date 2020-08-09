@@ -20,7 +20,7 @@ class Laporan extends CI_Controller
     public function index(){
         $this->load->view('v_beranda');
     }
-    public function admin(){
-        redirect('Admin/Beranda');
+    public function cek_kelengkapan(){
+        $this->load->view('v_cek_kelengkapan');
     }
 }
