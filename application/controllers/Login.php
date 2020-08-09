@@ -15,7 +15,8 @@ class Login extends CI_Controller{
 		// }
 	}
 	function index(){
-		$this->load->view('v_login');
+		$data['judul'] = 'Login';
+		$this->load->view('v_login', $data);
 	}
 	function aksi_login(){
 		$username = $this->input->post('username');
