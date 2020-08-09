@@ -1,16 +1,16 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-alpha
-    </div>
-  </footer>
+  <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 3.0.0-alpha
+  </div>
+</footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
@@ -22,6 +22,8 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<script src="<?= base_url(); ?>assets/template/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?= base_url(); ?>assets/template/plugins/datatables/dataTables.bootstrap4.js"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url(); ?>assets/template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Morris.js charts -->
@@ -51,3 +53,16 @@
 <script src="<?= base_url(); ?>assets/template/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url(); ?>assets/template/dist/js/demo.js"></script>
+<script>
+  $(function() {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
