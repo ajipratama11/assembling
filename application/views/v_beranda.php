@@ -17,6 +17,67 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">Dashboard</h1>
+<textarea rows="4" cols="30" id="texta"></textarea>
+<input type="submit" disabled  id="simpan" value="next" />
+
+<div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+               
+                  <td>Form</td>
+                  <td>Lengkap</td>
+                  <td>Tidak Lengkap</td>
+               
+                </thead>
+                <tbody>
+                <tr>
+                  <td>SBAR</td>
+                  <td> <input  type="radio" value="lengkap" id="radio1" name="textField" />
+                  </td>
+                  <td> <input type="radio" value="tidak lengkap" id="radio2" name="textField" /></td>
+                
+                </tr>
+                <tr>
+                  <td>CARD X</td>
+                  <td> <input onclick="myfunction()" type="radio" value="lengkap" id="radio3" name="textField2" />
+                  </td>
+                  <td> <input type="radio" value="tidak lengkap" id="radio4" name="textField2" /></td>
+                
+                </tr>
+                <tr>
+                  <td>PEMANTAUAN</td>
+                  <td> <input type="radio" value="lengkap" id="radio5" name="textField3" />
+                  </td>
+                  <td> <input type="radio" value="tidak lengkap" id="radio6" name="textField3" /></td>
+                
+                </tr>
+                <tr>
+                  <td>INFORM CONSENT</td>
+                  <td> <input type="radio" value="lengkap" id="radio7" name="textField4" />
+                  </td>
+                  <td> <input type="radio" value="tidak lengkap" id="radio8" name="textField4" /></td>
+                
+                </tr>
+                <tr>
+                  <td>SKRINING</td>
+                  <td> <input type="radio" value="lengkap" id="radio9" name="textField5" />
+                  </td>
+                  <td> <input type="radio" value="tidak lengkap" id="radio10" name="textField5" /></td>
+                
+                </tr>
+                <tr>
+                  <td>PENGKAJIAN KADAR</td>
+                  <td> <input type="radio" value="lengkap" id="radio11" name="textField6" />
+                  </td>
+                  <td> <input type="radio" value="tidak lengkap" id="radio12" name="textField6" /></td>
+                
+                </tr>
+                
+               
+               
+                
+              </table>
+            </div>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -598,22 +659,41 @@
   <!-- /.content-wrapper -->
  <?php $this->load->view('templates/footer') ?>
 </body>
-<!-- <input type="radio" id="radio" name="textField" />
-<textarea rows="4" cols="30" id="texta"></textarea>
-<input type="submit" value="next" /> -->
+
 </html>
 
-<script>
-    $(document).ready(function () {
-    $('input[type="submit"]').attr('disabled', true);
-    $('input[type="text"],textarea').on('keyup', function () {
-        var textarea_value = $("#texta").val();
-        var text_value = $('input[name="textField"]').prop('checked');
-        if (textarea_value != '' && text_value == true) {
-            $('input[type="submit"]').attr('disabled', false);
-        } else {
-            $('input[type="submit"]').attr('disabled', true);
+<script type="text/javascript">
+    
+
+   // Make this a function.
+   var textarea_value = $("#texta").val();
+   function checkProgress() {
+  if ( $("input:radio[name*='textField']:checked").length != 0) {
+    if ( $("input:radio[name*='textField2']:checked").length != 0) {
+        if ( $("input:radio[name*='textField3']:checked").length != 0) {
+          if ( $("input:radio[name*='textField4']:checked").length != 0) {
+            if ( $("input:radio[name*='textField5']:checked").length != 0) {
+              if ( $("input:radio[name*='textField6']:checked").length != 0) {
+                $('#simpan').prop('disabled', false);
+            }
+          }
         }
-    });
+      }
+    }
+  } else {
+    $('#simpan').prop('disabled', true);
+  }
+}
+
+$(function () {
+  // Set the status once the doc loads.
+  checkProgress();
+  // Set it again when any of the radio buttons are clicked.
+  $("input:radio[name*='textField']").on("click change", checkProgress);
+  $("input:radio[name*='textField2']").on("click change", checkProgress);
+  $("input:radio[name*='textField3']").on("click change", checkProgress);
+  $("input:radio[name*='textField4']").on("click change", checkProgress);
+  $("input:radio[name*='textField5']").on("click change", checkProgress);
+  $("input:radio[name*='textField6']").on("click change", checkProgress);
 });
 </script>
