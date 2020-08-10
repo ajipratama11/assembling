@@ -22,8 +22,9 @@ class Login extends CI_Controller{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		foreach($this->M_login->iduser($username) as $row){
-			$iduser=$row->id_admin;
+			$iduser=$row->id_user;
 			$username = $row->username;
+			$jabatan = $row->id_jabatan;
 		}
 		$where = array(
 			'username' => $username,
@@ -31,14 +32,34 @@ class Login extends CI_Controller{
 			);
 		$cek = $this->M_login->cek_login("user",$where)->num_rows();
 		if($cek > 0){
-			$data_session = array(
-				'username' => $username,
-				'iduser' => $iduser,
-				'status' => 'admin',
-				);
-			$this->session->set_userdata($data_session);
- 
-			redirect('Beranda');
+			if($jabatan == 1){
+				$data_session = array(
+					'username' => $username,
+					'iduser' => $iduser,
+					'status' => 'admin',
+					'jabatan' => 1,
+					);
+				$this->session->set_userdata($data_session);
+				redirect('Beranda');
+			}else if($jabatan == 2){
+				$data_session = array(
+					'username' => $username,
+					'iduser' => $iduser,
+					'status' => 'admin',
+					'jabatan' => 2,
+					);
+				$this->session->set_userdata($data_session);
+				redirect('Beranda');
+			}else if($jabatan == 3){
+				$data_session = array(
+					'username' => $username,
+					'iduser' => $iduser,
+					'status' => 'admin',
+					'jabatan' => 3,
+					);
+				$this->session->set_userdata($data_session);
+				redirect('Beranda');
+			}
 		}else{
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password anda salah!</div>');
                 redirect('Login');
