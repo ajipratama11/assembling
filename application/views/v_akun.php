@@ -43,8 +43,9 @@
               
               
               <div class="card-body">
-                  <?php if($jabatan == 1) { ?>
-                <button class="btn btn-success">Tambah Akun</button><br><br>
+                <?= $this->session->flashdata('message2'); ?>
+                <?php if($jabatan == 1) { ?>
+                  <a href="<?php echo base_url('Akun/tambahAkun'); ?>" class="btn btn-success">Tambah Akun</a><br><br>
                   <?php } ?>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
@@ -55,7 +56,9 @@
                   <td>Nama Lengkap</td>
                   <td>Jabatan</td>
                   <td>No HP</td>
+                  <?php if($jabatan == 1) { ?>
                   <td>Aksi</td>
+                  <?php } ?>
                
                 </thead>
                 <tbody>
@@ -68,10 +71,12 @@
                  <td><?= $s->nama_lengkap ?></td>
                  <td><?= $s->jabatan ?></td>
                  <td><?= $s->no_hp ?></td>
+                 <?php if($jabatan == 1) { ?>
                  <td>
-                     <a type="submit" href="" class="btn btn-warning">Edit</a>
-                     <a type="submit" href="" class="btn btn-danger">Hapus</a>
+                     <a  href="<?= base_url('Akun/editAkun/' . $s->id_user);   ?>" class="btn btn-warning">Edit</a>
+                     <a  href="<?= base_url('Akun/hapusAkun/' . $s->id_user);   ?>" class="btn btn-danger">Hapus</a>
                  </td>
+                 <?php } ?>
                 </tr>
                     <?php } ?>
               </table>

@@ -40,39 +40,44 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="" method="POST">
+              <div class="card-body col-md-4">
+                <?= $this->session->flashdata('message'); ?>
+              </div>
+              <form action="<?php echo base_url('Akun/tambahAkun'); ?>" method="post" enctype="multipart/form-data">
                 <div class="card-body col-md-12">
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" placeholder="Username">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Password</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="password" name="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
                   </div>
                 
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Nama Lengkap</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input type="text" name="nama_lengkap" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Jabatan</label>
-                    <select class="form-control">
-                      <option>option 1</option>
-                      <option>option 2</option>
-                      <option>option 3</option>
+                    <select name="id_jabatan" class="form-control">
+                    <?php foreach($jabatan as $j) { ?>
+                      <option value="<?= $j->id_jabatan ?>"><?= $j->jabatan ?></option>
+                    <?php } ?>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Nomor HP</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input name="no_hp" type="number" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
+                    <input name="tanggal_buat" value="<?php echo date('Y-m-d H:i:s') ?>" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
+                    <input name="terakhir_login" value="0000-00-00 00:00:00" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
                   </div>
                 </div>
 
 
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <input type="submit"  class="btn btn-primary" value="Simpan"></input>
+                  <input type="submit" name="submit"  class="btn btn-primary" value="submit">Simpan</input>
                 </div>
               </form>
             </div>
