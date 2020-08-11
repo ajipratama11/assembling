@@ -32,7 +32,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url(); ?>assets/template/pages/widgets.html" class="nav-link">
+          <a href="<?= base_url('Data/tabel_rekdis'); ?>" class="nav-link">
             <i class="nav-icon fa fa-book"></i>
             <p>
               Data Rekam Medis
@@ -89,7 +89,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="<?= base_url(); ?>assets/template/pages/tables/simple.html" class="nav-link">
+              <a href="<?= base_url('Data/formterhapus'); ?>" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Data Rekam Medis</p>
               </a>

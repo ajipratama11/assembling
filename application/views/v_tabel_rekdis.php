@@ -35,6 +35,9 @@
                 </div>
                 <!-- /.content-header -->
                 <div class="card-body">
+                <a href="<?= base_url('Data/add_rekdis') ?>" class="btn btn-success">Tambah Data</a>
+                <br>
+                <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -56,7 +59,7 @@
                                     <td><?= $r->alamat ?></td>
                                     <td>
                                         <a href="<?php echo site_url('Data/edit/' . $r->no_rekdis) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a> |
-                                        <a  href="<?php echo base_url('Data/hapusSementara/'.$r->no_rekdis); ?>"  class="btn btn-small text-danger"><i class="fa fa-edit"></i> Hapus</a>
+                                        <a  href="<?php echo base_url('Data/hapusSementara/'.$r->no_rekdis); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');"  class="btn btn-small text-danger"><i class="fa fa-edit"></i> Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
