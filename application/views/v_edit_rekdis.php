@@ -41,35 +41,40 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form role="form" action="<?= base_url('Data/add_rekdis') ?>" method="post" enctype="multipart/form-data">
+                                <form role="form" action="<?= base_url('Data/edit') ?>" method="post" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">No Rekam Medis</label>
-                                            <input type="text" name="no_rekdis" class="form-control" id="exampleInputEmail1" placeholder="Isi No Rekam Medis">
+                                            <input type="text" name="no_rekdis" value="<?= $rekdis->no_rekdis ?>" class="form-control" id="exampleInputEmail1" placeholder="Isi No Rekam Medis">
                                             <?= form_error('no_rekdis', '<small class="text-danger pl-3">', '</small>') ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Nama Pasien</label>
-                                            <input type="text" class="form-control" name="nama_pasien" id="exampleInputPassword1" placeholder="Isi Nama Pasien">
+                                            <input type="text" class="form-control" name="nama_pasien" value="<?= $rekdis->nama_pasien ?>" id="exampleInputPassword1" placeholder="Isi Nama Pasien">
                                             <?= form_error('nama_pasien', '<small class="text-danger pl-3">', '</small>') ?>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Tanggal Lahir</label>
-                                            <input type="date" class="form-control" name="tgl_lahir" id="exampleInputPassword1" placeholder="Isi Nama Pasien">
+                                            <input type="date" class="form-control" value="<?= $rekdis->tgl_lahir ?>" name="tgl_lahir" id="exampleInputPassword1" placeholder="Isi Nama Pasien">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Jenis Kelamin</label>
                                             <select name="jenis_kelamin" class="form-control">
                                                 <option>--Jenis Kelamin--</option>
-                                                <option value="Laki-laki">Laki-laki</option>
-                                                <option value="Perempuan">Perempuan</option>
+                                                <option value="Laki-laki" <?php if ($rekdis->jenis_kelamin == "Laki-laki") {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>Laki-laki</option>
+                                                <option value="Perempuan" <?php if ($rekdis->jenis_kelamin == "Perempuan") {
+                                                                                echo "selected=\"selected\"";
+                                                                            } ?>>Perempuan</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Alamat</label>
-                                            <input type="text" class="form-control" name="alamat" id="exampleInputPassword1" placeholder="Isi Alamat">
+                                            <input type="text" class="form-control" value="<?= $rekdis->alamat ?>" name="alamat" id="exampleInputPassword1" placeholder="Isi Alamat">
+                                            <input type="hidden" class="form-control" value="<?= $rekdis->status ?>" name="status" id="exampleInputPassword1" placeholder="Isi Alamat">
                                         </div>
-                                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Tambah</i></button>
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-update"> Update</i></button>
                                     </div>
                                 </form>
                             </div>

@@ -38,7 +38,7 @@ class M_Rekdis extends CI_Model
         $this->db->insert($this->_table, $this);
     }
 
-    public function update_rekdis($no_rekdis)
+    public function update()
     {
         $post = $this->input->post();
         $this->no_rekdis = $post['no_rekdis'];
@@ -46,8 +46,9 @@ class M_Rekdis extends CI_Model
         $this->tgl_lahir = $post['tgl_lahir'];
         $this->jenis_kelamin = $post['jenis_kelamin'];
         $this->alamat = $post['alamat'];
+        $this->status = $post['status'];
 
-        $this->db->update($this->_table,$this, array("no_rekdis" => $no_rekdis));
+        $this->db->update($this->_table, $this, array("no_rekdis" => $post['no_rekdis']));
     }
 
    public function hapus_sementara($status,$no_rekdis){
