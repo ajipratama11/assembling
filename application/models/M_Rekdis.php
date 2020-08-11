@@ -50,9 +50,11 @@ class M_Rekdis extends CI_Model
         $this->db->update($this->_table,$this, array("no_rekdis" => $no_rekdis));
     }
 
-    function hapusS($no_rekdis,$status){
+    function hapus_sementara($no_rekdis,$status){
+		 $this->db->query("UPDATE `rekam_medis` SET `status`='Terhapus' WHERE rekam_medis.no_rekdis='$no_rekdis'");
 	}
     function restore($no_rekdis,$status){
+		$query = $this->db->query("UPDATE `rekam_medis` SET `status`='$status' WHERE no_rekdis='$no_rekdis'");
     }
     function hapus($no_rekdis)
     {

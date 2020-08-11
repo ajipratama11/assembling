@@ -66,7 +66,7 @@ class Data extends CI_Controller
     public function hapusSementara(){
         $no_rekdis = $this->uri->segment(3);
         $status = 'Terhapus';
-        $this->M_Rekdis->hapusS($status,$no_rekdis);
+        $this->M_Rekdis->hapus_sementara($status,$no_rekdis);
         redirect('Data/tabel_rekdis');
     }
     public function restore(){
