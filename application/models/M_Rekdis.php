@@ -13,17 +13,11 @@ class M_Rekdis extends CI_Model
 
     public function get_rekdis()
     {
-<<<<<<< HEAD
-        $tdkhps = 'tidak terhapus';
-        $data = $this->db->query("SELECT * FROM rekam_medis WHERE status = '$tdkhps'")->result();
-        return $data;
-=======
         return $this->db->get_where($this->_table, ['status' => 'Terbaca'])->result();
     }
     public function get_rekdis2()
     {
         return $this->db->get_where($this->_table, ['status' => 'Terhapus'])->result();
->>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5
     }
 
     public function get_byid($no_rekdis)
@@ -39,11 +33,7 @@ class M_Rekdis extends CI_Model
         $this->tgl_lahir = $post['tgl_lahir'];
         $this->jenis_kelamin = $post['jenis_kelamin'];
         $this->alamat = $post['alamat'];
-<<<<<<< HEAD
-        $this->status = 'tidak terhapus';
-=======
         $this->status = $post['status'];
->>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5
 
         $this->db->insert($this->_table, $this);
     }
@@ -60,9 +50,6 @@ class M_Rekdis extends CI_Model
 
         $this->db->update($this->_table, $this, array("no_rekdis" => $post['no_rekdis']));
     }
-<<<<<<< HEAD
-}
-=======
 
    public function hapus_sementara($status,$no_rekdis){
 		 $this->db->query("UPDATE `rekam_medis` SET `status`='$status' WHERE rekam_medis.no_rekdis='$no_rekdis'");
@@ -77,4 +64,3 @@ class M_Rekdis extends CI_Model
 
 
 }
->>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5

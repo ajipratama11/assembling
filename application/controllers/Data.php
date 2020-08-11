@@ -26,16 +26,12 @@ class Data extends CI_Controller
     {
         $this->load->view('v_data_terhapus');
     }
-<<<<<<< HEAD
-    public function formterhapus()
-    {
-        $this->load->view('v_form_terhapus');
-=======
+
     public function formterhapus(){
         $data['judul'] = 'tabel Terhapus rekam medis';
         $data['restore'] = $this->M_Rekdis->get_rekdis2();
         $this->load->view('v_data_terhapus', $data);
->>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5
+
     }
 
     // public function rekdis() 
@@ -72,8 +68,6 @@ class Data extends CI_Controller
         $data['rekdis'] = $this->M_Rekdis->get_rekdis();
         $this->load->view('v_tabel_rekdis', $data);
     }
-<<<<<<< HEAD
-
     public function update_rekdis($no_rekdis = null)
     {
         $data['judul'] = 'edit rekam medis';
@@ -83,23 +77,22 @@ class Data extends CI_Controller
 
     public function edit()
     {
-        // $validation = $this->form_validation->set_rules('no_rekdis', 'No Rekam Medis', 'required|is_unique[rekam_medis.no_rekdis]|max_length[8]', [
-        //     'is_unique' => 'No Rekam Medis sudah terpakai',
-        //     'required' => 'No Rekam Medis Tidak Boleh Kosong',
-        //     'max_length' => 'No Rekam Medis tidak lebih dari 8 Karakter!'
-        // ]);
-        // $validation = $this->form_validation->set_rules('nama_pasien', 'Nama Pasien', 'required', [
-        //     'required' => 'Nama Pasien Tidak boleh kosong'
-        // ]);
+        $validation = $this->form_validation->set_rules('no_rekdis', 'No Rekam Medis', 'required|is_unique[rekam_medis.no_rekdis]|max_length[8]', [
+            'is_unique' => 'No Rekam Medis sudah terpakai',
+            'required' => 'No Rekam Medis Tidak Boleh Kosong',
+            'max_length' => 'No Rekam Medis tidak lebih dari 8 Karakter!'
+        ]);
+        $validation = $this->form_validation->set_rules('nama_pasien', 'Nama Pasien', 'required', [
+            'required' => 'Nama Pasien Tidak boleh kosong'
+        ]);
         $updaterekdis = $this->M_Rekdis;
-        // if ($validation->run()) {
+        if ($validation->run()) {
         $updaterekdis->update();
         $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Rekam Medis Berhasil Diubah :)</div>');
         redirect('Data/tabel_rekdis');
-        //}
+        }
     }
-}
-=======
+
     public function hapusSementara(){
         $no_rekdis = $this->uri->segment(3);
         $status = 'Terhapus';
@@ -118,4 +111,3 @@ class Data extends CI_Controller
         redirect('Data/formterhapus');
     }
 }
->>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5
