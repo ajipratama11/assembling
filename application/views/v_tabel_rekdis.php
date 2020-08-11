@@ -35,6 +35,9 @@
                 </div>
                 <!-- /.content-header -->
                 <div class="card-body">
+                <a href="<?= base_url('Data/add_rekdis') ?>" class="btn btn-success">Tambah Data</a>
+                <br>
+                <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -55,8 +58,13 @@
                                     <td><?= $r->jenis_kelamin ?></td>
                                     <td><?= $r->alamat ?></td>
                                     <td>
+<<<<<<< HEAD
                                         <a href="<?php echo site_url('Data/update_rekdis/' . $r->no_rekdis) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a> |
                                         <a onclick="deleteConfirm" href="<?php echo site_url('admin/berita/delete/' . $r->no_rekdis) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+=======
+                                        <a href="<?php echo site_url('Data/edit/' . $r->no_rekdis) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a> |
+                                        <a  href="<?php echo base_url('Data/hapusSementara/'.$r->no_rekdis); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');"  class="btn btn-small text-danger"><i class="fa fa-edit"></i> Hapus</a>
+>>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

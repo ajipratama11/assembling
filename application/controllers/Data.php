@@ -26,9 +26,16 @@ class Data extends CI_Controller
     {
         $this->load->view('v_data_terhapus');
     }
+<<<<<<< HEAD
     public function formterhapus()
     {
         $this->load->view('v_form_terhapus');
+=======
+    public function formterhapus(){
+        $data['judul'] = 'tabel Terhapus rekam medis';
+        $data['restore'] = $this->M_Rekdis->get_rekdis2();
+        $this->load->view('v_data_terhapus', $data);
+>>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5
     }
 
     // public function rekdis() 
@@ -65,6 +72,7 @@ class Data extends CI_Controller
         $data['rekdis'] = $this->M_Rekdis->get_rekdis();
         $this->load->view('v_tabel_rekdis', $data);
     }
+<<<<<<< HEAD
 
     public function update_rekdis($no_rekdis = null)
     {
@@ -91,3 +99,23 @@ class Data extends CI_Controller
         //}
     }
 }
+=======
+    public function hapusSementara(){
+        $no_rekdis = $this->uri->segment(3);
+        $status = 'Terhapus';
+        $this->M_Rekdis->hapus_sementara($status,$no_rekdis);
+        redirect('Data/tabel_rekdis');
+    }
+    public function restore(){
+        $no_rekdis = $this->uri->segment(3);
+        $status = 'Terbaca';
+        $this->M_Rekdis->restore($status, $no_rekdis);
+        redirect('Data/formterhapus');
+    }
+    public function hapusData(){
+        $no_rekdis = $this->uri->segment(3);
+        $this->M_Rekdis->hapus($no_rekdis);
+        redirect('Data/formterhapus');
+    }
+}
+>>>>>>> 31bdb8657b315833ff8be59a0ea465667bd565f5
