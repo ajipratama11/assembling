@@ -21,6 +21,7 @@ class Laporan extends CI_Controller
         $this->load->view('v_beranda');
     }
     public function cek_kelengkapan(){
-        $this->load->view('v_cek_kelengkapan');
+        $data['judul'] = 'Cek Kelengkapan' ;
+        $this->load->view('v_cek_kelengkapan', $data);
     }
 }

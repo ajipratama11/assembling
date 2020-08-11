@@ -51,16 +51,16 @@ class M_Rekdis extends CI_Model
         $this->db->update($this->_table, $this, array("no_rekdis" => $post['no_rekdis']));
     }
 
-   public function hapus_sementara($status,$no_rekdis){
-		 $this->db->query("UPDATE `rekam_medis` SET `status`='$status' WHERE rekam_medis.no_rekdis='$no_rekdis'");
-	}
-    function restore($status,$no_rekdis){
-		$query = $this->db->query("UPDATE `rekam_medis` SET `status`='$status' WHERE no_rekdis='$no_rekdis'");
+    public function hapus_sementara($status, $no_rekdis)
+    {
+        $this->db->query("UPDATE `rekam_medis` SET `status`='$status' WHERE rekam_medis.no_rekdis='$no_rekdis'");
+    }
+    function restore($status, $no_rekdis)
+    {
+        $query = $this->db->query("UPDATE `rekam_medis` SET `status`='$status' WHERE no_rekdis='$no_rekdis'");
     }
     function hapus($no_rekdis)
     {
         return $this->db->delete($this->_table, array("no_rekdis" => $no_rekdis));
     }
-
-
 }
