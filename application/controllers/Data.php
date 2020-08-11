@@ -18,13 +18,16 @@ class Data extends CI_Controller
         // }
     }
 
-    public function index(){
+    public function index()
+    {
         $this->load->view('v_beranda');
     }
-    public function dataterhapus(){
+    public function dataterhapus()
+    {
         $this->load->view('v_data_terhapus');
     }
-    public function formterhapus(){
+    public function formterhapus()
+    {
         $this->load->view('v_form_terhapus');
     }
 
@@ -37,9 +40,10 @@ class Data extends CI_Controller
     public function add_rekdis()
     {
         $data['judul'] = 'Rekam Medis';
-        $validation = $this->form_validation->set_rules('no_rekdis', 'No Rekam Medis', 'required|is_unique[rekam_medis.no_rekdis]', [
+        $validation = $this->form_validation->set_rules('no_rekdis', 'No Rekam Medis', 'required|is_unique[rekam_medis.no_rekdis]|max_length[8]', [
             'is_unique' => 'No Rekam Medis sudah terpakai',
-            'required' => 'No Rekam Medis Tidak Boleh Kosong'
+            'required' => 'No Rekam Medis Tidak Boleh Kosong',
+            'max_length' => 'No Rekam Medis tidak lebih dari 8 Karakter!'
         ]);
         $validation = $this->form_validation->set_rules('nama_pasien', 'Nama Pasien', 'required', [
             'required' => 'Nama Pasien Tidak boleh kosong'
@@ -55,10 +59,35 @@ class Data extends CI_Controller
         $this->load->view('v_rekam_medis', $data);
     }
 
-    public function tabel_rekdis() 
+    public function tabel_rekdis()
     {
         $data['judul'] = 'tabel rekam medis';
         $data['rekdis'] = $this->M_Rekdis->get_rekdis();
         $this->load->view('v_tabel_rekdis', $data);
+    }
+
+    public function update_rekdis($no_rekdis = null)
+    {
+        $data['judul'] = 'edit rekam medis';
+        $data['rekdis'] = $this->M_Rekdis->get_byid($no_rekdis);
+        $this->load->view('v_edit_rekdis', $data);
+    }
+
+    public function edit()
+    {
+        // $validation = $this->form_validation->set_rules('no_rekdis', 'No Rekam Medis', 'required|is_unique[rekam_medis.no_rekdis]|max_length[8]', [
+        //     'is_unique' => 'No Rekam Medis sudah terpakai',
+        //     'required' => 'No Rekam Medis Tidak Boleh Kosong',
+        //     'max_length' => 'No Rekam Medis tidak lebih dari 8 Karakter!'
+        // ]);
+        // $validation = $this->form_validation->set_rules('nama_pasien', 'Nama Pasien', 'required', [
+        //     'required' => 'Nama Pasien Tidak boleh kosong'
+        // ]);
+        $updaterekdis = $this->M_Rekdis;
+        // if ($validation->run()) {
+        $updaterekdis->update();
+        $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Rekam Medis Berhasil Diubah :)</div>');
+        redirect('Data/tabel_rekdis');
+        //}
     }
 }

@@ -13,7 +13,9 @@ class M_Rekdis extends CI_Model
 
     public function get_rekdis()
     {
-        return $this->db->get($this->_table)->result();
+        $tdkhps = 'tidak terhapus';
+        $data = $this->db->query("SELECT * FROM rekam_medis WHERE status = '$tdkhps'")->result();
+        return $data;
     }
 
     public function get_byid($no_rekdis)
@@ -29,11 +31,12 @@ class M_Rekdis extends CI_Model
         $this->tgl_lahir = $post['tgl_lahir'];
         $this->jenis_kelamin = $post['jenis_kelamin'];
         $this->alamat = $post['alamat'];
+        $this->status = 'tidak terhapus';
 
         $this->db->insert($this->_table, $this);
     }
 
-    public function update_rekdis($no_rekdis)
+    public function update()
     {
         $post = $this->input->post();
         $this->no_rekdis = $post['no_rekdis'];
@@ -41,9 +44,8 @@ class M_Rekdis extends CI_Model
         $this->tgl_lahir = $post['tgl_lahir'];
         $this->jenis_kelamin = $post['jenis_kelamin'];
         $this->alamat = $post['alamat'];
+        $this->status = $post['status'];
 
-        $this->db->update($this->_table,$this, array("no_rekdis" => $no_rekdis));
+        $this->db->update($this->_table, $this, array("no_rekdis" => $post['no_rekdis']));
     }
-
-
 }
