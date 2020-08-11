@@ -30,6 +30,7 @@ class Login extends CI_Controller{
 			'username' => $username,
 			'password' => $password
 			);
+			$tgl = date('Y-m-d H:i:s');
 		$cek = $this->M_login->cek_login("user",$where)->num_rows();
 		if($cek > 0){
 			if($jabatan == 1){
@@ -39,6 +40,7 @@ class Login extends CI_Controller{
 					'status' => 'admin',
 					'jabatan' => 1,
 					);
+				$this->M_login->gantitgl($tgl,$iduser);
 				$this->session->set_userdata($data_session);
 				redirect('Beranda');
 			}else if($jabatan == 2){
@@ -48,6 +50,7 @@ class Login extends CI_Controller{
 					'status' => 'admin',
 					'jabatan' => 2,
 					);
+				$this->M_login->gantitgl($tgl,$iduser);
 				$this->session->set_userdata($data_session);
 				redirect('Beranda');
 			}else if($jabatan == 3){
@@ -57,6 +60,7 @@ class Login extends CI_Controller{
 					'status' => 'admin',
 					'jabatan' => 3,
 					);
+				$this->M_login->gantitgl($tgl,$iduser);
 				$this->session->set_userdata($data_session);
 				redirect('Beranda');
 			}

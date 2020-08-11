@@ -52,10 +52,10 @@
                
                   <td>No</td>
                   <td>Username</td>
-                  <td>Password</td>
                   <td>Nama Lengkap</td>
                   <td>Jabatan</td>
                   <td>No HP</td>
+                  <td>Terakhir Login</td>
                   <?php if($jabatan == 1) { ?>
                   <td>Aksi</td>
                   <?php } ?>
@@ -67,10 +67,10 @@
                 <tr>
                  <td><?= $no++; ?></td>
                  <td><?= $s->username ?></td>
-                 <td><?= $s->password ?></td>
                  <td><?= $s->nama_lengkap ?></td>
                  <td><?= $s->jabatan ?></td>
                  <td><?= $s->no_hp ?></td>
+                 <td><?= $s->terakhir_login ?></td>
                  <?php if($jabatan == 1) { ?>
                  <td>
                      <a  href="<?= base_url('Akun/editAkun/' . $s->id_user);   ?>" class="btn btn-warning">Edit</a>

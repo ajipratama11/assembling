@@ -25,7 +25,9 @@ class Data extends CI_Controller
         $this->load->view('v_data_terhapus');
     }
     public function formterhapus(){
-        $this->load->view('v_form_terhapus');
+        $data['judul'] = 'tabel Terhapus rekam medis';
+        $data['restore'] = $this->M_Rekdis->get_rekdis2();
+        $this->load->view('v_data_terhapus', $data);
     }
 
     // public function rekdis() 
@@ -60,5 +62,22 @@ class Data extends CI_Controller
         $data['judul'] = 'tabel rekam medis';
         $data['rekdis'] = $this->M_Rekdis->get_rekdis();
         $this->load->view('v_tabel_rekdis', $data);
+    }
+    public function hapusSementara(){
+        $no_rekdis = $this->uri->segment(3);
+        $status = 'Terhapus';
+        $this->M_Rekdis->hapusS($status,$no_rekdis);
+        redirect('Data/tabel_rekdis');
+    }
+    public function restore(){
+        $no_rekdis = $this->uri->segment(3);
+        $status = 'Terbaca';
+        $this->M_Rekdis->restore($status, $no_rekdis);
+        redirect('Data/formterhapus');
+    }
+    public function hapusData(){
+        $no_rekdis = $this->uri->segment(3);
+        $this->M_Rekdis->hapus($no_rekdis);
+        redirect('Data/formterhapus');
     }
 }

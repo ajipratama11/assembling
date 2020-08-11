@@ -57,7 +57,13 @@ class Akun extends CI_Controller
     }
     public function editAkun($id_user = null)
     {
-        $this->M_akun->UpdateAkun($id_user);
-        redirect('Akun');   
+        // $id_user = $this->uri->segment(3);
+        if ($this->input->post('submit')) {
+            $this->M_akun->updateAkun($id_user);
+            redirect('Akun');
+        } else {
+            $data['akun'] = $this->M_akun->getById($id_user);
+            $this->load->view('v_editAkun', $data);
+        }  
     }
 }

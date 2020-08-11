@@ -8,7 +8,6 @@ class M_akun extends CI_Model
 
 
 
-    public $id_user;
     public $username;
     public $password;
     public $nama_lengkap;
@@ -58,6 +57,10 @@ class M_akun extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function getById($id_user)
+    {
+        return $this->db->get_where($this->_table, ["id_user" => $id_user])->row();
+    }
     public function getjabatan()
     {
         return $this->db->get('jabatan')->result();
@@ -79,7 +82,6 @@ class M_akun extends CI_Model
     function updateAkun($id_user)
     {
         $post = $this->input->post();
-        $this->id_user = $post['id_user'];
         $this->username = $post['username'];
         $this->password = $post['password'];
         $this->nama_lengkap = $post['nama_lengkap'];

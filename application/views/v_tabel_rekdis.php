@@ -56,7 +56,7 @@
                                     <td><?= $r->alamat ?></td>
                                     <td>
                                         <a href="<?php echo site_url('Data/edit/' . $r->no_rekdis) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a> |
-                                        <a onclick="deleteConfirm" href="<?php echo site_url('admin/berita/delete/' . $r->no_rekdis) ?>" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                        <a  href="<?php echo base_url('Data/hapusSementara/'.$r->no_rekdis);   ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" d class="btn btn-small text-danger"><i class="fa fa-edit"></i> Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
