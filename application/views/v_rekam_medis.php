@@ -68,6 +68,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Alamat</label>
                                             <input type="text" class="form-control" name="alamat" id="exampleInputPassword1" placeholder="Isi Alamat">
+                                            <input type="hidden" class="form-control" value="Terbaca" name="status" id="exampleInputPassword1" placeholder="Isi Alamat">
                                         </div>
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"> Tambah</i></button>
                                     </div>

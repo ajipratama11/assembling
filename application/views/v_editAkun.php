@@ -21,7 +21,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Akun</a></li>
-              <li class="breadcrumb-item active">Tambah Akun</li>
+              <li class="breadcrumb-item active">Edit Akun</li>
             </ol>
           </div>
         </div>
@@ -36,39 +36,43 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Form Tambah Akun</h3>
+                <h3 class="card-title">Form Edit Akun</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <div class="card-body col-md-4">
                 <?= $this->session->flashdata('message'); ?>
               </div>
-              <form action="<?php echo base_url('Akun/tambahAkun'); ?>" method="post" enctype="multipart/form-data">
+              <form action="<?php echo base_url('Akun/editAkun/'.$akun->id_user); ?>" method="post" enctype="multipart/form-data">
                 <div class="card-body col-md-12">
                   <div class="form-group col-md-4">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" placeholder="Username">
+                      <label for="exampleInputEmail1">Username</label>
+                    
+                      <input type="text" class="form-control" name="username" value="<?= $akun->username ?>" id="exampleInputEmail1" placeholder="Username">
                   </div>
-                    <input type="hidden" value="12345" name="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
+                    <input type="hidden" value="<?= $akun->password ?>" name="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
               
                 
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Nama Lengkap</label>
-                    <input type="text" name="nama_lengkap" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
+                    <input type="text" name="nama_lengkap" value="<?= $akun->nama_lengkap ?>" class="form-control" id="exampleInputEmail1" placeholder="Nama Lengkap">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Jabatan</label>
                     <select name="id_jabatan" class="form-control">
-                    <?php foreach($jabatan as $j) { ?>
-                      <option value="<?= $j->id_jabatan ?>"><?= $j->jabatan ?></option>
-                    <?php } ?>
+                    <?php 
+                    $jabatan = $this->db->query("SELECT * FROM jabatan")->result();
+                    foreach($jabatan as $k) { ?>
+                      <option <?php if($k->id_jabatan==$akun->id_jabatan) echo 'selected' ?> value="<?= $k->id_jabatan ?>"><?= $k->jabatan ?></option>
+                    <?php }
+                     ?>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Nomor HP</label>
-                    <input name="no_hp" type="number" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
-                    <input name="tanggal_buat" value="<?php echo date('Y-m-d H:i:s') ?>" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
-                    <input name="terakhir_login" value="0000-00-00 00:00:00" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
+                    <input name="no_hp" type="number" class="form-control" value="<?= $akun->no_hp ?>" id="exampleInputEmail1" placeholder="Nomor HP">
+                    <input name="tanggal_buat" value="<?= $akun->tanggal_buat ?>" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
+                    <input name="terakhir_login" value="<?= $akun->terakhir_login ?>" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
                   </div>
                 </div>
 
