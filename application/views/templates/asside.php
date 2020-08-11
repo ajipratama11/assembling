@@ -48,7 +48,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url(); ?>assets/template/pages/widgets.html" class="nav-link">
+          <a href="<?= base_url('Akun'); ?>" class="nav-link">
             <i class="nav-icon fa fa-user"></i>
             <p>
               Data user
