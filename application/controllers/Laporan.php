@@ -9,6 +9,7 @@ class Laporan extends CI_Controller
         $this->load->helper('array');
         $this->load->library('form_validation');
         $this->load->helper(array('form', 'url'));
+        $this->load->model('M_cek_kelengkapan');
         // if($this->session->userdata('status') != "admin"){
         // 	echo "<script>
         //         alert('Anda harus login terlebih dahulu');
@@ -23,5 +24,9 @@ class Laporan extends CI_Controller
     public function cek_kelengkapan(){
         $data['judul'] = 'Cek Kelengkapan' ;
         $this->load->view('v_cek_kelengkapan', $data);
+    }
+    public function add_cekkel()
+    {
+        
     }
 }

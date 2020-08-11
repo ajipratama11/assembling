@@ -40,7 +40,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url(); ?>assets/template/pages/widgets.html" class="nav-link">
+          <a href="<?= base_url('Laporan/cek_kelengkapan'); ?>" class="nav-link">
             <i class="nav-icon fa fa-edit"></i>
             <p>
               Cek Kelengkapan
