@@ -12,7 +12,15 @@ class M_cek_kelengkapan extends CI_Model
 
     public function rules()
     {
-        
+        return [
+
+            [
+                'field' => 'no_transaksi',
+                'label' => 'No Transaksi',
+                'rules' => 'required'
+            ],
+
+        ];
     }
 
     public function get_cekkel()

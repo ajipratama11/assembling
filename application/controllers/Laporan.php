@@ -27,6 +27,20 @@ class Laporan extends CI_Controller
     }
     public function add_cekkel()
     {
-        
+        $tambahcekkel = $this->M_cek_kelengkapan;
+        $validation = $this->form_validation;
+        $validation->set_rules($tambahcekkel->rules());
+        if ($validation->run()) {
+            $tambahcekkel->add_cekkel();
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Cek Kelengkapan Berhasil Disimpan :)</div>');
+            redirect('Data/tabel_rekdis');
+        }
+    }
+
+    public function tabel_cekkel()
+    {
+        $data['judul'] = 'Tabel Cek Kelengkapan';
+        $data['cekkel'] = $this->M_cek_kelengkapan->get_cekkel();
+        $this->load->view('v_tabel_cekkelengkapan', $data);
     }
 }
