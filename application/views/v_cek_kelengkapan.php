@@ -145,7 +145,7 @@
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <input type="submit" class="btn btn-primary" value="Simpan Sementara"></input>
+                    <input type="submit" id="simpansementara" class="btn btn-primary" value="Simpan_Sementara"></input>
 
                     <input type="submit" disabled id="simpan" class="btn btn-primary" value="Simpan"></input>
                   </div>
@@ -189,6 +189,7 @@
           if ($("input:radio[name*='inform_consent']:checked").length != 0) {
             if ($("input:radio[name*='skring']:checked").length != 0) {
               if ($("input:radio[name*='pengkajian_kadar']:checked").length != 0) {
+                $('#simpansementara').prop('disabled', true);
                 $('#simpan').prop('disabled', false);
               }
             }
@@ -197,6 +198,7 @@
       }
     } else {
       $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
     }
   }
 
