@@ -37,7 +37,7 @@ class Laporan extends CI_Controller
         }
     }
 
-    public function tabel_cekkel()
+    public function Laporan()
     {
         $data['judul'] = 'Tabel Cek Kelengkapan';
         $data['cekkel'] = $this->M_cek_kelengkapan->get_cekkel();
