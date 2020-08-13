@@ -25,16 +25,16 @@ class Laporan extends CI_Controller
         $data['judul'] = 'Cek Kelengkapan' ;
         $this->load->view('v_cek_kelengkapan', $data);
     }
-    public function add_cekkel()
-    {
-        $tambahcekkel = $this->M_cek_kelengkapan;
-        $validation = $this->form_validation;
-        $validation->set_rules($tambahcekkel->rules());
-        if ($validation->run()) {
-            $tambahcekkel->add_cekkel();
-            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Data Cek Kelengkapan Berhasil Disimpan :)</div>');
-            redirect('Data/tabel_rekdis');
-        }
+    public function tambah_cek_kelengkapan(){
+        if ($this->input->post('Simpan')) {
+            $status = 'Lengkap';
+            $this->M_data->tambahCekKelengkapan();
+            redirect('Akun');
+        } else if($this->input->post('Simpan_Sementara')) {
+            $status = 'Tidak Lengkap';
+            $this->M_data->tambahCekKelengkapan();
+            redirect('Akun');
+        }  
     }
 
     public function Laporan()

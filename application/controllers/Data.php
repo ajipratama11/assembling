@@ -111,15 +111,4 @@ class Data extends CI_Controller
         redirect('Data/formterhapus');
     }
 
-    public function tambah_cek_kelengkapan(){
-        if ($this->input->post('Simpan')) {
-            $status = 'Lengkap';
-            $this->M_data->tambahCekKelengkapan();
-            redirect('Akun');
-        } else if($this->input->post('Simpan_Sementara')) {
-            $status = 'Tidak Lengkap';
-            $this->M_data->tambahCekKelengkapan();
-            redirect('Akun');
-        }  
-    }
 }
