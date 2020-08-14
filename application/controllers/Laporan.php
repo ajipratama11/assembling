@@ -28,12 +28,12 @@ class Laporan extends CI_Controller
     public function tambah_cek_kelengkapan(){
         if ($this->input->post('Simpan')) {
             $status = 'Lengkap';
-            $this->M_data->tambahCekKelengkapan();
-            redirect('Akun');
+            $this->M_cek_kelengkapan->add_cekkel($status);
+            redirect('Laporan/Laporan');
         } else if($this->input->post('Simpan_Sementara')) {
             $status = 'Tidak Lengkap';
-            $this->M_data->tambahCekKelengkapan();
-            redirect('Akun');
+            $this->M_cek_kelengkapan->add_cekkel($status);
+            redirect('Laporan/Laporan');
         }  
     }
 
