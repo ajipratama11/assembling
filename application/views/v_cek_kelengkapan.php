@@ -41,12 +41,8 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="" method="POST">
+                <form role="form" action="<?= base_url('Laporan/tambah_cek_kelengkapan') ?>" enctype="multipart/form-data" method="post">
                   <div class="card-body col-md-12">
-                    <div class="form-group col-md-4">
-                      <label for="exampleInputEmail1">No. Transaksi</label>
-                      <input type="text" class="form-control" name="no_transaksi" id="exampleInputEmail1" placeholder="No Transaksi">
-                    </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">No. RM</label>
                       <div class="input-group mb-3">
@@ -63,26 +59,23 @@
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Jenis Pelayanan</label>
                       <select class="form-control" name="jenis_pelayanan">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                        <option>--- Pilih Jenis Pelayanan ---</option>
+                        <option value="Rawat Inap">Rawat Inap</option>
+                        <option value="Rawat Jalan">Rawat Jalan</option>
                       </select>
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Asal Ruangan</label>
                       <select class="form-control" name="asal_ruangan">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                        <option>--- Pilih Asal Ruangan ---</option>
+                        <option value="Rawat Inap">Ruang Rawat Inap</option>
+                        <option value="Rawat Jalan">Ruang Rawat Jalan</option>
                       </select>
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Tanggal Cek</label>
                       <input type="date" name="tgl_cek" class="form-control" id="exampleInputEmail1">
+                      <input type="hidden" name="nama_form" value="Form Kelengkapan" class="form-control" id="exampleInputEmail1">
                     </div>
 
                   </div>
@@ -106,7 +99,7 @@
                         </tr>
                         <tr>
                           <td>CARD X</td>
-                          <td> <input onclick="myfunction()" type="radio" value="lengkap" id="radio3" name="card_x" />
+                          <td> <input type="radio" value="lengkap" id="radio3" name="card_x" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio4" name="card_x" /></td>
 
@@ -178,7 +171,7 @@
                           <td>PENGKAJIAN PERAWAT/BIDAN</td>
                           <td> <input type="radio" value="lengkap" id="radio25" name="pengkajian_perawat" />
                           </td>
-                          <td> <input type="radio" value="tidak lengkap" id="radio26" name="ringkasan_perawat" /></td>
+                          <td> <input type="radio" value="tidak lengkap" id="radio26" name="pengkajian_perawat" /></td>
                         </tr>
                         <tr>
                           <td>ASUHAN GIZI</td>
@@ -263,18 +256,6 @@
                   </div>
                 </form>
               </div>
-              <!-- /.card -->
-
-              <!-- Form Element sizes -->
-
-              <!-- /.card -->
-
-
-              <!-- /.card -->
-
-              <!-- Input addon -->
-
-              <!-- /.card -->
 
             </div>
             <!--/.col (left) -->
@@ -363,7 +344,6 @@
     $("input:radio[name*='skring']").on("click change", checkProgress);
     $("input:radio[name*='pengkajian_kadar']").on("click change", checkProgress);
     $("input:radio[name*='assesmen_awal']").on("click change", checkProgress);
-    $("input:radio[name*='pengkajian_kadar']").on("click change", checkProgress);
     $("input:radio[name*='transfer_ruangan']").on("click change", checkProgress);
     $("input:radio[name*='resume']").on("click change", checkProgress);
     $("input:radio[name*='ringkasan_mk']").on("click change", checkProgress);

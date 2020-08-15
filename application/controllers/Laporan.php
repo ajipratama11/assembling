@@ -18,29 +18,35 @@ class Laporan extends CI_Controller
         // }
     }
 
-    public function index(){
+    public function index()
+    {
         $this->load->view('v_beranda');
     }
-    public function cek_kelengkapan(){
-        $data['judul'] = 'Cek Kelengkapan' ;
+    public function cek_kelengkapan()
+    {
+        $data['judul'] = 'Cek Kelengkapan';
         $this->load->view('v_cek_kelengkapan', $data);
     }
-    public function tambah_cek_kelengkapan(){
+    public function tambah_cek_kelengkapan()
+    {
+        //$validation = $this->form_validation->set_rules();
         if ($this->input->post('Simpan')) {
             $status = 'Lengkap';
-            $this->M_cek_kelengkapan->add_cekkel($status);
-            redirect('Laporan/Laporan');
-        } else if($this->input->post('Simpan_Sementara')) {
+            $this->M_cek_kelengkapan->add_cek_kelengkapan($status);
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Cek Kelengkapan Berhasil Disimpan :)</div>');
+            redirect('Laporan/laporan');
+        } else if ($this->input->post('Simpan_Sementara')) {
             $status = 'Tidak Lengkap';
-            $this->M_cek_kelengkapan->add_cekkel($status);
-            redirect('Laporan/Laporan');
-        }  
+            $this->M_cek_kelengkapan->add_cek_kelengkapan($status);
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Cek Kelengkapan Berhasil Disimpan :)</div>');
+            redirect('Laporan/laporan');
+        }
     }
 
-    public function Laporan()
+    public function laporan()
     {
         $data['judul'] = 'Tabel Cek Kelengkapan';
-        $data['cekkel'] = $this->M_cek_kelengkapan->get_cekkel();
-        $this->load->view('v_tabel_cekkelengkapan', $data);
+        $data['laporan'] = $this->M_cek_kelengkapan->get_laporan();
+        $this->load->view('v_laporan', $data);
     }
 }

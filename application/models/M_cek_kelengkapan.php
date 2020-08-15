@@ -23,15 +23,14 @@ class M_cek_kelengkapan extends CI_Model
         ];
     }
 
-    public function get_cekkel()
+    public function get_laporan()
     {
         return $this->db->get($this->_table)->result();
     }
 
-    public function add_cekkel($status)
+    public function add_cek_kelengkapan($status)
     {
         $post = $this->input->post();
-        $this->no_transaksi = $post['no_transaksi'];
         $this->no_rekdis = $post['no_rekdis'];
         $this->nama_pasien = $post['nama_pasien'];
         $this->jenis_pelayanan = $post['jenis_pelayanan'];
@@ -63,8 +62,7 @@ class M_cek_kelengkapan extends CI_Model
         $this->set_marking = $post['set_marking'];
         $this->ceklist_keselamatan = $post['ceklist_keselamatan'];
         $this->ppi = $post['ppi'];
-        $this->status = $status;
-        
+        $this->status = $post[$status];      
         $this->db->insert($this->_table, $this);
     }
 }
