@@ -49,4 +49,26 @@ class Laporan extends CI_Controller
         $data['laporan'] = $this->M_cek_kelengkapan->get_laporan();
         $this->load->view('v_laporan', $data);
     }
+
+    public function update_cekkel($no_transaksi = NULL)
+    {
+        $data['judul'] = 'edit cek kelengkapan';
+        $data['update'] = $this->M_cek_kelengkapan->get_by_id($no_transaksi);
+        $this->load->view('v_edit_cek_kelengkapan', $data);
+    }
+
+    public function update_cek_kelengkapan()
+    {
+        if ($this->input->post('Simpan')) {
+            $status = 'Lengkap';
+            $this->M_cek_kelengkapan->update_cek_kelengkapan($status);
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Cek Kelengkapan Berhasil Diubah :)</div>');
+            redirect('Laporan/laporan');
+        } else if ($this->input->post('Simpan_Sementara')) {
+            $status = 'Tidak Lengkap';
+            $this->M_cek_kelengkapan->update_cek_kelengkapan($status);
+            $this->session->set_flashdata('success', '<div class="alert alert-success" role="alert">Cek Kelengkapan Berhasil Diubah :)</div>');
+            redirect('Laporan/laporan');
+        }
+    }
 }
