@@ -120,9 +120,9 @@
                         </tr>
                         <tr>
                           <td>SKRINING</td>
-                          <td> <input type="radio" value="lengkap" id="radio9" name="skring" />
+                          <td> <input type="radio" value="lengkap" id="radio9" name="skrining" />
                           </td>
-                          <td> <input type="radio" value="tidak lengkap" id="radio10" name="skring" /></td>
+                          <td> <input type="radio" value="tidak lengkap" id="radio10" name="skrining" /></td>
 
                         </tr>
                         <tr>
@@ -250,9 +250,9 @@
                   <!-- /.card-body -->
 
                   <div class="card-footer">
-                    <input type="submit" id="simpansementara" class="btn btn-primary" value="Simpan_Sementara"></input>
+                    <input type="submit" id="simpansementara" name="Simpan_Sementara" class="btn btn-primary" value="Simpan_Sementara"></input>
 
-                    <input type="submit" disabled id="simpan" class="btn btn-primary" value="Simpan"></input>
+                    <input type="submit" disabled id="simpan" name="Simpan" class="btn btn-primary" value="Simpan"></input>
                   </div>
                 </form>
               </div>
