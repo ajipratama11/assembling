@@ -280,7 +280,7 @@
       if ($("input:radio[name*='card_x']:checked").length != 0) {
         if ($("input:radio[name*='pemantauan']:checked").length != 0) {
           if ($("input:radio[name*='inform_consent']:checked").length != 0) {
-            if ($("input:radio[name*='skring']:checked").length != 0) {
+            if ($("input:radio[name*='skrining']:checked").length != 0) {
               if ($("input:radio[name*='pengkajian_kadar']:checked").length != 0) {
                 if ($("input:radio[name*='assesmen_awal']:checked").length != 0) {
                   if ($("input:radio[name*='transfer_ruangan']:checked").length != 0) {
@@ -341,7 +341,7 @@
     $("input:radio[name*='card_x']").on("click change", checkProgress);
     $("input:radio[name*='pemantauan']").on("click change", checkProgress);
     $("input:radio[name*='inform_consent']").on("click change", checkProgress);
-    $("input:radio[name*='skring']").on("click change", checkProgress);
+    $("input:radio[name*='skrining']").on("click change", checkProgress);
     $("input:radio[name*='pengkajian_kadar']").on("click change", checkProgress);
     $("input:radio[name*='assesmen_awal']").on("click change", checkProgress);
     $("input:radio[name*='transfer_ruangan']").on("click change", checkProgress);

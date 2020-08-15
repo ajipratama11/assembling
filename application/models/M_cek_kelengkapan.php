@@ -56,13 +56,13 @@ class M_cek_kelengkapan extends CI_Model
         $this->obs_suhu_nadi = $post['obs_suhu_nadi'];
         $this->laporan_operasi = $post['laporan_operasi'];
         $this->assesmen_prabedah = $post['assesmen_prabedah'];
-        $this->assesmen_praanastasi = $post['assesmen_praanastasi'];
+        $this->assesmen_praanastesi = $post['assesmen_praanastesi'];
         $this->assesmen_keperawat = $post['assesmen_keperawatan'];
         $this->timbang_terima = $post['timbang_terima'];
         $this->set_marking = $post['set_marking'];
         $this->ceklist_keselamatan = $post['ceklist_keselamatan'];
         $this->ppi = $post['ppi'];
-        $this->status = $post['$status'];  
+        $this->status = $post[$status];  
         $this->db->insert($this->_table, $this);
     }
 }
