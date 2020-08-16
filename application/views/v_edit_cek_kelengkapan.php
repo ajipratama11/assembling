@@ -75,9 +75,9 @@
                                                 <option value="Rawat Inap" <?php if ($update->asal_ruangan == "Rawat Inap") {
                                                                                 echo "selected=\"selected\"";
                                                                             } ?>>Ruang Rawat Inap</option>
-                                                <option value="Rawat Jalan"><?php if ($update->asal_ruangan == "Rawat Jalan") {
+                                                <option value="Rawat Jalan"<?php if ($update->asal_ruangan == "Rawat Jalan") {
                                                                                 echo "selected=\"selected\"";
-                                                                            } ?>Ruang Rawat Jalan</option>
+                                                                            } ?>>Ruang Rawat Jalan</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-4">
@@ -100,158 +100,158 @@
                                             <tbody>
                                                 <tr>
                                                     <td>SBAR</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio1" name="sbar" <?php if ($update->sbar == "lengkap") ?>  checked/>
+                                                    <td> <input type="radio" value="lengkap" id="radio1" name="sbar" <?php echo ($update->sbar == 'lengkap' ? 'checked' : '') ?>/>
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio2" name="sbar" <?php if ($update->sbar == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio2" name="sbar" <?php echo ($update->sbar == 'tidak lengkap' ? 'checked' : '') ?>/></td>
 
                                                 </tr>
                                                 <tr>
                                                     <td>CARD X</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio3" name="card_x" <?php if ($update->card_x == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio3" name="card_x" <?php echo ($update->card_x == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio4" name="card_x" <?php if ($update->card_x == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio4" name="card_x" <?php echo ($update->card_x == 'tidak lengkap' ? 'checked' : '') ?> /></td>
 
                                                 </tr>
                                                 <tr>
                                                     <td>PEMANTAUAN</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio5" name="pemantauan" <?php if ($update->pemantauan == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio5" name="pemantauan" <?php echo ($update->pemantauan == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio6" name="pemantauan" <?php if ($update->pemantauan == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio6" name="pemantauan" <?php echo ($update->pemantauan == 'tidak lengkap' ? 'checked' : '') ?> /></td>
 
                                                 </tr>
                                                 <tr>
                                                     <td>INFORM CONSENT</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio7" name="inform_consent" <?php if ($update->inform_consent == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio7" name="inform_consent" <?php echo ($update->inform_consent == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio8" name="inform_consent" <?php if ($update->inform_consent == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio8" name="inform_consent" <?php echo ($update->inform_consent == 'tidak lengkap' ? 'checked' : '') ?> /></td>
 
                                                 </tr>
                                                 <tr>
                                                     <td>SKRINING</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio9" name="skrining" <?php if ($update->skrining == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio9" name="skrining" <?php echo ($update->skrining == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio10" name="skrining" <?php if ($update->skrining == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio10" name="skrining" <?php echo ($update->skrining == 'tidak lengkap' ? 'checked' : '') ?> /></td>
 
                                                 </tr>
                                                 <tr>
                                                     <td>PENGKAJIAN KADAR</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio11" name="pengkajian_kadar" <?php if ($update->pengkajian_kadar == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio11" name="pengkajian_kadar" <?php echo ($update->pengkajian_kadar == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio12" name="pengkajian_kadar" <?php if ($update->pengkajian_kadar == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio12" name="pengkajian_kadar" <?php echo ($update->pengkajian_kadar == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>ASSESMEN AWAL</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio13" name="assesmen_awal" <?php if ($update->assesmen_awal == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio13" name="assesmen_awal" <?php echo ($update->assesmen_awal == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio14" name="assesmen_awal" <?php if ($update->assesmen_awal == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio14" name="assesmen_awal" <?php echo ($update->assesmen_awal == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>TRANSFER RUANGAN</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio15" name="transfer_ruangan" <?php if ($update->transfer_ruangan == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio15" name="transfer_ruangan" <?php echo ($update->transfer_ruangan == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio16" name="transfer_ruangan" <?php if ($update->transfer_ruangan == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio16" name="transfer_ruangan" <?php echo ($update->transfer_ruangan == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>RESUME</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio17" name="resume" <?php if ($update->resume == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio17" name="resume" <?php echo ($update->resume == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio18" name="resume" <?php if ($update->resume == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio18" name="resume" <?php echo ($update->resume == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>RINGKASAN M K</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio19" name="ringkasan_mk" <?php if ($update->ringkasan_mk == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio19" name="ringkasan_mk" <?php echo ($update->ringkasan_mk == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio20" name="ringkasan_mk" <?php if ($update->ringkasan_mk == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio20" name="ringkasan_mk" <?php echo ($update->ringkasan_mk == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>ASSESMEN DPJP</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio21" name="assesmen_dpjp" <?php if ($update->assesmen_dpjp == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio21" name="assesmen_dpjp" <?php echo ($update->assesmen_dpjp == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio22" name="assesmen_dpjp" <?php if ($update->assesmen_dpjp == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio22" name="assesmen_dpjp" <?php echo ($update->assesmen_dpjp == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>PENGKAJIAN BAYI BARU LAHIR</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio23" name="pengkajian_bayi" <?php if ($update->pengkajian_bayi == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio23" name="pengkajian_bayi" <?php echo ($update->pengkajian_bayi == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio24" name="pengkajian_bayi" <?php if ($update->pengkajian_bayi == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio24" name="pengkajian_bayi" <?php echo ($update->pengkajian_bayi == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>PENGKAJIAN PERAWAT/BIDAN</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio25" name="pengkajian_perawat" <?php if ($update->pengkajian_perawat == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio25" name="pengkajian_perawat" <?php echo ($update->pengkajian_perawat == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio26" name="pengkajian_perawat" <?php if ($update->pengkajian_perawat == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio26" name="pengkajian_perawat" <?php echo ($update->pengkajian_perawat == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>ASUHAN GIZI</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio27" name="asuhan_gizi" <?php if ($update->asuhan_gizi == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio27" name="asuhan_gizi" <?php echo ($update->asuhan_gizi == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio28" name="asuhan_gizi" <?php if ($update->asuhan_gizi == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio28" name="asuhan_gizi" <?php echo ($update->asuhan_gizi == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>PERENCANAAN PASIEN PULANG</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio29" name="perencanaan_pasien_pulang" <?php if ($update->perencanaan_pasien_pulang == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio29" name="perencanaan_pasien_pulang" <?php echo ($update->perencanaan_pasien_pulang == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio30" name="perencanaan_pasien_pulang" <?php if ($update->perencanaan_pasien_pulang == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio30" name="perencanaan_pasien_pulang" <?php echo ($update->perencanaan_pasien_pulang == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>OBS TANDA VITAL</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio31" name="obs_tanda_vital" <?php if ($update->obs_tanda_vital == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio31" name="obs_tanda_vital" <?php echo ($update->obs_tanda_vital == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio32" name="obs_tanda_vital" <?php if ($update->obs_tanda_vital == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio32" name="obs_tanda_vital" <?php echo ($update->obs_tanda_vital == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>OBS SUHU NADI</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio33" name="obs_suhu_nadi" <?php if ($update->obs_suhu_nadi == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio33" name="obs_suhu_nadi" <?php echo ($update->obs_suhu_nadi == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio34" name="obs_suhu_nadi" <?php if ($update->obs_suhu_nadi == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio34" name="obs_suhu_nadi" <?php echo ($update->obs_suhu_nadi == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>LAPORAN OPERASI</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio35" name="laporan_operasi" <?php if ($update->laporan_operasi == "lengkap") ?> checked/>
+                                                    <td> <input type="radio" value="lengkap" id="radio35" name="laporan_operasi" <?php echo ($update->laporan_operasi == 'lengkap' ? 'checked' : '') ?>/>
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio36" name="laporan_operasi" <?php if ($update->laporan_operasi == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio36" name="laporan_operasi" <?php echo ($update->laporan_operasi == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>ASSESMEN PRA BEDAH</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio37" name="assesmen_prabedah" <?php if ($update->assesmen_prabedah == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio37" name="assesmen_prabedah" <?php echo ($update->assesmen_prabedah == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio38" name="assesmen_prabedah" <?php if ($update->assesmen_prabedah == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio38" name="assesmen_prabedah" <?php echo ($update->assesmen_prabedah == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>ASSESMEN PRA ANASTESI</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio39" name="assesmen_praanastesi" <?php if ($update->assesmen_praanastesi == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio39" name="assesmen_praanastesi" <?php echo ($update->assesmen_praanastesi == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio40" name="assesmen_praanastesi" <?php if ($update->assesmen_praanastesi == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio40" name="assesmen_praanastesi" <?php echo ($update->assesmen_praanastesi == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>ASSESMEN KEPERAWATAN OK</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio41" name="assesmen_keperawatan" <?php if ($update->assesmen_keperawatan == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio41" name="assesmen_keperawatan" <?php echo ($update->assesmen_keperawatan == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio42" name="assesmen_keperawatan" <?php if ($update->assesmen_keperawatan == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio42" name="assesmen_keperawatan" <?php echo ($update->assesmen_keperawatan == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>TIMBANG TERIMA PRA-OP</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio43" name="timbang_terima" <?php if ($update->timbang_terima == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio43" name="timbang_terima" <?php echo ($update->timbang_terima == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio44" name="timbang_terima" <?php if ($update->timbang_terima == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio44" name="timbang_terima" <?php echo ($update->timbang_terima == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>SET MARKING</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio45" name="set_marking" <?php if ($update->set_marking == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio45" name="set_marking" <?php echo ($update->set_marking == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio46" name="set_marking" <?php if ($update->set_marking == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio46" name="set_marking" <?php echo ($update->set_marking == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>CEKLIST KESELAMATAN OP</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio47" name="ceklist_keselamatan" <?php if ($update->ceklist_keselamatan == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio47" name="ceklist_keselamatan" <?php echo ($update->ceklist_keselamatan == 'lengkap' ? 'checked' : '') ?>/>
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio48" name="ceklist_keselamatan" <?php if ($update->ceklist_keselamatan == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio48" name="ceklist_keselamatan" <?php echo ($update->ceklist_keselamatan == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                                 <tr>
                                                     <td>PPI</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio49" name="ppi" <?php if ($update->ppi == "lengkap") ?> checked />
+                                                    <td> <input type="radio" value="lengkap" id="radio49" name="ppi" <?php echo ($update->ppi == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio50" name="ppi" <?php if ($update->ppi == "tidak lengkap") ?> checked /></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio50" name="ppi" <?php echo ($update->ppi == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
                                         </table>
                                     </div>

@@ -110,5 +110,10 @@ class M_cek_kelengkapan extends CI_Model
         $this->db->update($this->_table, $this, array("no_transaksi" => $post['no_transaksi']));
     }
 
+    public function delete_cek_kelengkapan($no_transaksi)
+    {
+        return $this->db->delete($this->_table, array("no_transaksi" => $no_transaksi));
+    }
+
 
 }
