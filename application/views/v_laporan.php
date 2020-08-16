@@ -45,6 +45,7 @@
                                 <th>Nama Form</th>
                                 <th>Keterangan Lengkap/Tidak Lengkap</th>
                                 <th>Jenis Layanan</th>
+                                <th>Asal Ruangan</th>
                                 <th>Opsi</th>
                             </tr>
                         </thead>
@@ -54,11 +55,12 @@
                                     <td><?= $l->no_transaksi ?></td>
                                     <td><?= $l->no_rekdis ?></td>
                                     <td><?= $l->nama_pasien ?></td>
+                                    <td><?= $l->status ?></td>
                                     <td><?= $l->jenis_pelayanan ?></td>
                                     <td><?= $l->asal_ruangan ?></td>
                                     <td>
-                                        <a href="<?php echo site_url('Data/edit/' . $l->no_transaksi) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
-                                        <a href="<?php echo base_url('Data/hapusSementara/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                        <a href="<?php echo site_url('Laporan/update_cekkel/' . $l->no_transaksi) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
+                                        <a href="<?php echo base_url('Laporan/hapus_cek_kelengkapan/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
