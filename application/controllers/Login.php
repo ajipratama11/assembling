@@ -30,6 +30,7 @@ class Login extends CI_Controller{
 			'username' => $username,
 			'password' => $password
 			);
+			date_default_timezone_set('Asia/Jakarta');
 			$tgl = date('Y-m-d H:i:s');
 		$cek = $this->M_login->cek_login("user",$where)->num_rows();
 		if($cek > 0){

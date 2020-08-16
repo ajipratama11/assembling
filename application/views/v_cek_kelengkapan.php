@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Nama Pasien</label>
-                      <input type="text" name="nama_pasien" class="form-control" id="exampleInputEmail1" placeholder="Nama Pasien">
+                      <input type="text" name="nama_pasien" class="form-control" placeholder="Nama Pasien">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Jenis Pelayanan</label>
@@ -74,8 +74,8 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Tanggal Cek</label>
-                      <input type="date" name="tgl_cek" class="form-control" id="exampleInputEmail1">
-                      <input type="hidden" name="nama_form" value="Form Kelengkapan" class="form-control" id="exampleInputEmail1">
+                      <input type="date" name="tgl_cek" class="form-control">
+                      <input type="hidden" name="nama_form" value="Form Kelengkapan" class="form-control">
                     </div>
 
                   </div>
