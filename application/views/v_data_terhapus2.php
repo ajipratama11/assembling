@@ -50,7 +50,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($laporan as $l) : ?>
+                            <?php foreach ($restore as $l) : ?>
                                 <tr>
                                     <td><?= $l->no_transaksi ?></td>
                                     <td><?= $l->no_rekdis ?></td>
@@ -59,8 +59,8 @@
                                     <td><?= $l->jenis_pelayanan ?></td>
                                     <td><?= $l->asal_ruangan ?></td>
                                     <td>
-                                        <a href="<?php echo site_url('Laporan/update_cekkel/' . $l->no_transaksi) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
-                                        <a href="<?php echo base_url('Laporan/hapusSementara/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                        <a type="button" href="<?= base_url('Laporan/restore/' . $l->no_transaksi);   ?>" onclick="return confirm('Apakah Anda Ingin Mengembalikan Data  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small"><i class="fa fa-restore"></i> Restore</a> |
+                                        <a href="<?php echo base_url('Laporan/hapus_cek_kelengkapan/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

@@ -79,18 +79,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url(); ?>assets/template/pages/tables/data.html" class="nav-link">
+              <a href="<?= base_url('Laporan/formterhapus'); ?>" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Data Form</p>
               </a>
             </li>
           </ul>
         </li>
-
-
-
-
-
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

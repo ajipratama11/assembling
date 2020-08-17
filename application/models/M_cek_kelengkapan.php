@@ -33,6 +33,15 @@ class M_cek_kelengkapan extends CI_Model
         return $this->db->get_where($this->_table, ['no_transaksi' => $no_transaksi])->row();
     }
 
+    public function get_cekkel()
+    {
+        return $this->db->get_where($this->_table, ['status_2' => 'Terbaca'])->result();
+    }
+    public function get_cekkel2()
+    {
+        return $this->db->get_where($this->_table, ['status_2' => 'Terhapus'])->result();
+    }
+
     public function add_cek_kelengkapan($status)
     {
         $post = $this->input->post();
@@ -115,5 +124,14 @@ class M_cek_kelengkapan extends CI_Model
         return $this->db->delete($this->_table, array("no_transaksi" => $no_transaksi));
     }
 
+    public function hapus_sementara($status, $no_transaksi)
+    {
+        $this->db->query("UPDATE `cek_kelengkapan` SET `status_2`='$status' WHERE cek_kelengkapan.no_transaksi='$no_transaksi'");
+    }
+
+    function restore($status, $no_transaksi)
+    {
+        $query = $this->db->query("UPDATE `cek_kelengkapan` SET `status_2`='$status' WHERE no_transaksi='$no_transaksi'");
+    }
 
 }

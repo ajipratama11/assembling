@@ -55,8 +55,8 @@
                                     <td><?= $r->jenis_kelamin ?></td>
                                     <td><?= $r->alamat ?></td>
                                     <td>
-                                      <a type="button" href="<?= base_url('Data/restore/' . $r->no_rekdis);   ?>" onclick="return confirm('Apakah Anda Ingin Mengembalikan Data  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small"><i class="fa fa-edit"></i> Restore</a> |
-                                      <a type="button" href="<?= base_url('Data/hapusData/' . $r->no_rekdis);   ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Permanen  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small text-danger"><i class="fa fa-edit"></i> Hapus Permanen</a>
+                                        <a type="button" href="<?= base_url('Data/restore/' . $r->no_rekdis);   ?>" onclick="return confirm('Apakah Anda Ingin Mengembalikan Data  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small"><i class="fa fa-edit"></i> Restore</a> |
+                                        <a type="button" href="<?= base_url('Data/hapusData/' . $r->no_rekdis);   ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Permanen  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small text-danger"><i class="fa fa-edit"></i> Hapus Permanen</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

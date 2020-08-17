@@ -24,9 +24,9 @@ class Laporan extends CI_Controller
     }
     public function cek_kelengkapan()
     {
-        
+
         $data['judul'] = 'Cek Kelengkapan';
-       // $data['rm'] = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->result();
+        // $data['rm'] = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->result();
         $this->load->view('v_cek_kelengkapan', $data);
     }
     public function tambah_cek_kelengkapan()
@@ -48,8 +48,15 @@ class Laporan extends CI_Controller
     public function laporan()
     {
         $data['judul'] = 'Tabel Cek Kelengkapan';
-        $data['laporan'] = $this->M_cek_kelengkapan->get_laporan();
+        $data['laporan'] = $this->M_cek_kelengkapan->get_cekkel();
         $this->load->view('v_laporan', $data);
+    }
+
+    public function formterhapus()
+    {
+        $data['judul'] = 'tabel Terhapus cek kelengkapan';
+        $data['restore'] = $this->M_cek_kelengkapan->get_cekkel2();
+        $this->load->view('v_data_terhapus2', $data);
     }
 
     public function update_cekkel($no_transaksi = NULL)
@@ -81,29 +88,45 @@ class Laporan extends CI_Controller
         redirect('Laporan/laporan');
     }
 
-    public function cek_rm(){
+    public function hapusSementara()
+    {
+        $no_transaksi = $this->uri->segment(3);
+        $status = 'Terhapus';
+        $this->M_cek_kelengkapan->hapus_sementara($status, $no_transaksi);
+        redirect('Laporan/laporan');
+    }
+
+    public function restore()
+    {
+        $no_transaksi = $this->uri->segment(3);
+        $status = 'Terbaca';
+        $this->M_cek_kelengkapan->restore($status, $no_transaksi);
+        redirect('Laporan/formterhapus');
+    }
+
+    public function cek_rm()
+    {
         $id = $this->input->post('no_rm');
         $cek = $this->db->query("SELECT * FROM cek_kelengkapan WHERE no_rekdis='$id'")->num_rows();
         $cek2 = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->num_rows();
- 
-        if($cek != 1){
-         if($cek2 == 1){
-            echo "<script>
+
+        if ($cek != 1) {
+            if ($cek2 == 1) {
+                echo "<script>
                   alert('Sudah Benar');
-                  window.location.href = '".base_url('Laporan/cek_kelengkapan/'.$id.'')."';
-              </script>";//Url tujuan
-         }else{
-            echo "<script>
+                  window.location.href = '" . base_url('Laporan/cek_kelengkapan/' . $id . '') . "';
+              </script>"; //Url tujuan
+            } else {
+                echo "<script>
             alert('salah');
-            window.location.href = '".base_url('Beranda')."';
-        </script>";//Url tujuan
-         }
-        }else{
+            window.location.href = '" . base_url('Beranda') . "';
+        </script>"; //Url tujuan
+            }
+        } else {
             echo "<script>
             alert('Sudah ada');
-            window.location.href = '".base_url('Beranda')."';
-        </script>";//Url tujuan
+            window.location.href = '" . base_url('Beranda') . "';
+        </script>"; //Url tujuan
         }
-        
-     }
+    }
 }
