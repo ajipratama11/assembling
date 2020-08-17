@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Nama Pasien</label>
-                      <input type="text" name="nama_pasien" class="form-control" id="exampleInputEmail1" placeholder="Nama Pasien">
+                      <input type="text" name="nama_pasien" class="form-control" placeholder="Nama Pasien">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Jenis Pelayanan</label>
@@ -74,14 +74,14 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Tanggal Cek</label>
-                      <input type="date" name="tgl_cek" class="form-control" id="exampleInputEmail1">
-                      <input type="hidden" name="nama_form" value="Form Kelengkapan" class="form-control" id="exampleInputEmail1">
+                      <input type="date" name="tgl_cek" class="form-control">
+                      <input type="hidden" name="nama_form" value="Form Kelengkapan" class="form-control">
                     </div>
 
                   </div>
 
                   <div class="card-body">
-                    <table id="example1" class="table table-bordered table-hover">
+                    <table class="table">
                       <thead>
 
                         <td>Form</td>
@@ -303,29 +303,101 @@
                                                     if ($("input:radio[name*='ppi']:checked").length != 0) {
                                                       $('#simpansementara').prop('disabled', true);
                                                       $('#simpan').prop('disabled', false);
+                                                    }else{
+                                                      $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                                     }
+                                                  }else{
+                                                    $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                                   }
+                                                }else{
+                                                  $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                                 }
+                                              }else{
+                                                $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                               }
+                                            }else{
+                                              $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                             }
+                                          }else{
+                                            $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                           }
+                                        }else{
+                                          $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                         }
+                                      }else{
+                                        $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                       }
+                                    }else{
+                                      $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                     }
+                                  }else{
+                                    $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                   }
+                                }else{
+                                  $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                                 }
+                              }else{
+                                $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                               }
+                            }else{
+                              $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                             }
+                          }else{
+                            $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                           }
+                        }else{
+                          $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                         }
+                      }else{
+                        $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                       }
+                    }else{
+                      $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                     }
+                  }else{
+                    $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                   }
+                }else{
+                  $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
                 }
+              }else{
+                $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
               }
+            }else{
+              $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
             }
+          }else{
+            $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
           }
+        }else{
+          $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
         }
+      }else{
+        $('#simpan').prop('disabled', true);
+      $('#simpansementara').prop('disabled', false);
       }
     } else {
       $('#simpan').prop('disabled', true);

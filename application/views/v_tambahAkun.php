@@ -67,7 +67,7 @@
                   <div class="form-group col-md-4">
                     <label for="exampleInputEmail1">Nomor HP</label>
                     <input name="no_hp" type="number" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
-                    <input name="tanggal_buat" value="<?php echo date('Y-m-d H:i:s') ?>" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
+                    <input name="tanggal_buat" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('Y-m-d H:i:s') ?>" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
                     <input name="terakhir_login" value="0000-00-00 00:00:00" type="hidden" class="form-control" id="exampleInputEmail1" placeholder="Nomor HP">
                   </div>
                 </div>
