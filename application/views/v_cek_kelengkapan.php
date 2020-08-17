@@ -46,9 +46,8 @@
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">No. RM</label>
                       <div class="input-group mb-3">
-                        <input type="text" name="no_rekdis" placeholder="Nomor Rekam Medis" class="form-control">
+                        <input type="text" name="no_rekdis" value="<?= $rm->no_rekdis ?>" placeholder="Nomor Rekam Medis" readonly class="form-control">
                         <div class="input-group-append">
-                          <Button type="submit" class="btn btn-primary">Cari</Button>
                         </div>
                       </div>
                     </div>

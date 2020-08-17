@@ -63,4 +63,13 @@ class M_Rekdis extends CI_Model
     {
         return $this->db->delete($this->_table, array("no_rekdis" => $no_rekdis));
     }
+
+    function cek_rm1($id){
+      $query =  $this->db->query("SELECT * FROM cek_kelengkapan WHERE no_rekdis='$id'")->result();
+      return $query->result();
+    }
+    function cek_rm2($id){
+      $query =  $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->result();
+      return $query->result();
+    }
 }

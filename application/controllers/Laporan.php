@@ -24,7 +24,9 @@ class Laporan extends CI_Controller
     }
     public function cek_kelengkapan()
     {
+        $id = $this->uri->segment(3);
         $data['judul'] = 'Cek Kelengkapan';
+        $data['rm'] = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->result();
         $this->load->view('v_cek_kelengkapan', $data);
     }
     public function tambah_cek_kelengkapan()
@@ -78,4 +80,30 @@ class Laporan extends CI_Controller
         $this->M_cek_kelengkapan->delete_cek_kelengkapan($no_transaksi);
         redirect('Laporan/laporan');
     }
+
+    public function cek_rm(){
+        $id = $this->input->post('no_rm');
+        $cek = $this->db->query("SELECT * FROM cek_kelengkapan WHERE no_rekdis='$id'")->num_rows();
+        $cek2 = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->num_rows();
+ 
+        if($cek != 1){
+         if($cek2 == 1){
+            echo "<script>
+                  alert('Sudah Benar');
+                  window.location.href = '".base_url('Laporan/cek_kelengkapan/'.$id.'')."';
+              </script>";//Url tujuan
+         }else{
+            echo "<script>
+            alert('salah');
+            window.location.href = '".base_url('Beranda')."';
+        </script>";//Url tujuan
+         }
+        }else{
+            echo "<script>
+            alert('Sudah ada');
+            window.location.href = '".base_url('Beranda')."';
+        </script>";//Url tujuan
+        }
+        
+     }
 }

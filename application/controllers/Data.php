@@ -110,5 +110,6 @@ class Data extends CI_Controller
         $this->M_Rekdis->hapus($no_rekdis);
         redirect('Data/formterhapus');
     }
+    
 
 }
