@@ -24,9 +24,9 @@ class Laporan extends CI_Controller
     }
     public function cek_kelengkapan()
     {
-        $id = $this->uri->segment(3);
+        
         $data['judul'] = 'Cek Kelengkapan';
-        $data['rm'] = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->result();
+       // $data['rm'] = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->result();
         $this->load->view('v_cek_kelengkapan', $data);
     }
     public function tambah_cek_kelengkapan()

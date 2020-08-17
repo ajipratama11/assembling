@@ -46,7 +46,7 @@
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">No. RM</label>
                       <div class="input-group mb-3">
-                        <input type="text" name="no_rekdis" value="<?= $rm->no_rekdis ?>" placeholder="Nomor Rekam Medis" readonly class="form-control">
+                        <input type="text" name="no_rekdis" value="" placeholder="Nomor Rekam Medis" readonly class="form-control">
                         <div class="input-group-append">
                         </div>
                       </div>
