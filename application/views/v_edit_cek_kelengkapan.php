@@ -85,6 +85,7 @@
                                             <label for="exampleInputEmail1">Tanggal Cek</label>
                                             <input type="date" name="tgl_cek" value="<?= $update->tgl_cek ?>" class="form-control" id="exampleInputEmail1">
                                             <input type="hidden" name="nama_form" value="<?= $update->nama_form ?>" class="form-control" id="exampleInputEmail1">
+                                            <input type="hidden" name="status_2" value="<?= $update->status_2 ?>" class="form-control" id="exampleInputEmail1">
                                         </div>
 
                                     </div>
