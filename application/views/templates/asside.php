@@ -65,7 +65,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-table"></i>
+            <i class="nav-icon fa fa-trash"></i>
             <p>
               Data Terhapus
               <i class="fa fa-angle-left right"></i>
@@ -81,7 +81,7 @@
             <li class="nav-item">
               <a href="<?= base_url('Laporan/formterhapus'); ?>" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
-                <p>Data Form</p>
+                <p>Data Laporan</p>
               </a>
             </li>
           </ul>

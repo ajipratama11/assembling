@@ -10,6 +10,7 @@ class Laporan extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper(array('form', 'url'));
         $this->load->model('M_cek_kelengkapan');
+        $this->load->model('M_Rekdis');
         // if($this->session->userdata('status') != "admin"){
         // 	echo "<script>
         //         alert('Anda harus login terlebih dahulu');
@@ -22,10 +23,11 @@ class Laporan extends CI_Controller
     {
         $this->load->view('v_beranda');
     }
-    public function cek_kelengkapan()
+    public function cek_kelengkapan($no_rekdis)
     {
 
         $data['judul'] = 'Cek Kelengkapan';
+        $data['cekkel'] = $this->M_Rekdis->get_byid($no_rekdis);
         // $data['rm'] = $this->db->query("SELECT * FROM rekam_medis WHERE no_rekdis='$id'")->result();
         $this->load->view('v_cek_kelengkapan', $data);
     }

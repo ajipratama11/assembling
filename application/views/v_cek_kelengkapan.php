@@ -46,14 +46,14 @@
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">No. RM</label>
                       <div class="input-group mb-3">
-                        <input type="text" name="no_rekdis" value="" placeholder="Nomor Rekam Medis" readonly class="form-control">
+                        <input type="text" name="no_rekdis" value="<?= $cekkel->no_rekdis ?>" placeholder="Nomor Rekam Medis" readonly class="form-control">
                         <div class="input-group-append">
                         </div>
                       </div>
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Nama Pasien</label>
-                      <input type="text" name="nama_pasien" class="form-control" placeholder="Nama Pasien">
+                      <input type="text" name="nama_pasien" value="<?= $cekkel->nama_pasien ?>" class="form-control" placeholder="Nama Pasien">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Jenis Pelayanan</label>

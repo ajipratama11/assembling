@@ -11,6 +11,11 @@ class M_Rekdis extends CI_Model
         parent::__construct();
     }
 
+    public function get()
+    {
+        return $this->db->get($this->_table)->result();
+    }
+
     public function get_rekdis()
     {
         return $this->db->get_where($this->_table, ['status' => 'Terbaca'])->result();
