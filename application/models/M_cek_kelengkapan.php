@@ -76,7 +76,8 @@ class M_cek_kelengkapan extends CI_Model
         $this->set_marking = $post['set_marking'];
         $this->ceklist_keselamatan = $post['ceklist_keselamatan'];
         $this->ppi = $post['ppi'];
-        $this->status = $status;  
+        $this->status = $status;
+        $this->status_2 = $post['status_2'];
         $this->db->insert($this->_table, $this);
     }
 
@@ -115,7 +116,8 @@ class M_cek_kelengkapan extends CI_Model
         $this->set_marking = $post['set_marking'];
         $this->ceklist_keselamatan = $post['ceklist_keselamatan'];
         $this->ppi = $post['ppi'];
-        $this->status = $status;  
+        $this->status = $status;
+        $this->status_2 = $post['status_2'];
         $this->db->update($this->_table, $this, array("no_transaksi" => $post['no_transaksi']));
     }
 

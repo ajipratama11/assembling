@@ -1,4 +1,5 @@
 <?php $this->load->view('templates/head'); ?>
+
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
@@ -75,7 +76,7 @@
                                                 <option value="Rawat Inap" <?php if ($update->asal_ruangan == "Rawat Inap") {
                                                                                 echo "selected=\"selected\"";
                                                                             } ?>>Ruang Rawat Inap</option>
-                                                <option value="Rawat Jalan"<?php if ($update->asal_ruangan == "Rawat Jalan") {
+                                                <option value="Rawat Jalan" <?php if ($update->asal_ruangan == "Rawat Jalan") {
                                                                                 echo "selected=\"selected\"";
                                                                             } ?>>Ruang Rawat Jalan</option>
                                             </select>
@@ -89,7 +90,7 @@
                                     </div>
 
                                     <div class="card-body">
-                                        <table id="example1" class="table table-bordered table-hover">
+                                        <table class="table">
                                             <thead>
 
                                                 <td>Form</td>
@@ -100,9 +101,9 @@
                                             <tbody>
                                                 <tr>
                                                     <td>SBAR</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio1" name="sbar" <?php echo ($update->sbar == 'lengkap' ? 'checked' : '') ?>/>
+                                                    <td> <input type="radio" value="lengkap" id="radio1" name="sbar" <?php echo ($update->sbar == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
-                                                    <td> <input type="radio" value="tidak lengkap" id="radio2" name="sbar" <?php echo ($update->sbar == 'tidak lengkap' ? 'checked' : '') ?>/></td>
+                                                    <td> <input type="radio" value="tidak lengkap" id="radio2" name="sbar" <?php echo ($update->sbar == 'tidak lengkap' ? 'checked' : '') ?> /></td>
 
                                                 </tr>
                                                 <tr>
@@ -207,7 +208,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>LAPORAN OPERASI</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio35" name="laporan_operasi" <?php echo ($update->laporan_operasi == 'lengkap' ? 'checked' : '') ?>/>
+                                                    <td> <input type="radio" value="lengkap" id="radio35" name="laporan_operasi" <?php echo ($update->laporan_operasi == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
                                                     <td> <input type="radio" value="tidak lengkap" id="radio36" name="laporan_operasi" <?php echo ($update->laporan_operasi == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>
@@ -243,7 +244,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>CEKLIST KESELAMATAN OP</td>
-                                                    <td> <input type="radio" value="lengkap" id="radio47" name="ceklist_keselamatan" <?php echo ($update->ceklist_keselamatan == 'lengkap' ? 'checked' : '') ?>/>
+                                                    <td> <input type="radio" value="lengkap" id="radio47" name="ceklist_keselamatan" <?php echo ($update->ceklist_keselamatan == 'lengkap' ? 'checked' : '') ?> />
                                                     </td>
                                                     <td> <input type="radio" value="tidak lengkap" id="radio48" name="ceklist_keselamatan" <?php echo ($update->ceklist_keselamatan == 'tidak lengkap' ? 'checked' : '') ?> /></td>
                                                 </tr>

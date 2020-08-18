@@ -87,7 +87,7 @@ class Laporan extends CI_Controller
     {
         $no_transaksi = $this->uri->segment(3);
         $this->M_cek_kelengkapan->delete_cek_kelengkapan($no_transaksi);
-        redirect('Laporan/laporan');
+        redirect('Laporan/formterhapus');
     }
 
     public function hapusSementara()

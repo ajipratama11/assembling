@@ -75,6 +75,7 @@
                       <label for="exampleInputEmail1">Tanggal Cek</label>
                       <input type="date" name="tgl_cek" class="form-control">
                       <input type="hidden" name="nama_form" value="Form Kelengkapan" class="form-control">
+                      <input type="hidden" name="status_2" value="Terbaca" class="form-control">
                     </div>
 
                   </div>
