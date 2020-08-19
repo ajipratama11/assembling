@@ -135,5 +135,4 @@ class M_cek_kelengkapan extends CI_Model
     {
         $query = $this->db->query("UPDATE `cek_kelengkapan` SET `status_2`='$status' WHERE no_transaksi='$no_transaksi'");
     }
-
 }
