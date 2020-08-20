@@ -95,7 +95,6 @@
                           <td> <input type="radio" value="lengkap" id="radio1" name="sbar" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio2" name="sbar" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="sbar" hidden checked /></td>
 
                         </tr>
                         <tr>
@@ -103,15 +102,12 @@
                           <td> <input type="radio" value="lengkap" id="radio3" name="card_x" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio4" name="card_x" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="card_x" hidden checked /></td>
-
                         </tr>
                         <tr>
                           <td>PEMANTAUAN</td>
                           <td> <input type="radio" value="lengkap" id="radio5" name="pemantauan" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio6" name="pemantauan" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="pemantauan" hidden checked /></td>
 
                         </tr>
                         <tr>
@@ -119,7 +115,6 @@
                           <td> <input type="radio" value="lengkap" id="radio7" name="inform_consent" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio8" name="inform_consent" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="inform_consent" hidden checked /></td>
 
                         </tr>
                         <tr>
@@ -127,7 +122,6 @@
                           <td> <input type="radio" value="lengkap" id="radio9" name="skrining" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio10" name="skrining" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="skrining" hidden checked /></td>
 
                         </tr>
                         <tr>
@@ -135,91 +129,78 @@
                           <td> <input type="radio" value="lengkap" id="radio11" name="pengkajian_kadar" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio12" name="pengkajian_kadar" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="pengkajian_kadar" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>ASSESMEN AWAL</td>
                           <td> <input type="radio" value="lengkap" id="radio13" name="assesmen_awal" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio14" name="assesmen_awal" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="assesmen_awal" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>TRANSFER RUANGAN</td>
                           <td> <input type="radio" value="lengkap" id="radio15" name="transfer_ruangan" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio16" name="transfer_ruangan" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="transfer_ruangan" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>RESUME</td>
                           <td> <input type="radio" value="lengkap" id="radio17" name="resume" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio18" name="resume" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="resume" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>RINGKASAN M K</td>
                           <td> <input type="radio" value="lengkap" id="radio19" name="ringkasan_mk" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio20" name="ringkasan_mk" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="ringkasan_mk" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>ASSESMEN DPJP</td>
                           <td> <input type="radio" value="lengkap" id="radio21" name="assesmen_dpjp" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio22" name="assesmen_dpjp" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="assesmen_dpjp" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>PENGKAJIAN BAYI BARU LAHIR</td>
                           <td> <input type="radio" value="lengkap" id="radio23" name="pengkajian_bayi" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio24" name="pengkajian_bayi" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="pengkajian_bayi" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>PENGKAJIAN PERAWAT/BIDAN</td>
                           <td> <input type="radio" value="lengkap" id="radio25" name="pengkajian_perawat" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio26" name="pengkajian_perawat" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="pengkajian_perawat" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>ASUHAN GIZI</td>
                           <td> <input type="radio" value="lengkap" id="radio27" name="asuhan_gizi" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio28" name="asuhan_gizi" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="asuhan_gizi" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>PERENCANAAN PASIEN PULANG</td>
                           <td> <input type="radio" value="lengkap" id="radio29" name="perencanaan_pasien_pulang" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio30" name="perencanaan_pasien_pulang" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="perencanaan_pasien_pulang" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>OBS TANDA VITAL</td>
                           <td> <input type="radio" value="lengkap" id="radio31" name="obs_tanda_vital" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio32" name="obs_tanda_vital" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="obs_tanda_vital" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>OBS SUHU NADI</td>
                           <td> <input type="radio" value="lengkap" id="radio33" name="obs_suhu_nadi" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio34" name="obs_suhu_nadi" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="obs_suhu_nadi" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>LAPORAN OPERASI</td>
                           <td> <input type="radio" value="lengkap" id="radio35" name="laporan_operasi" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio36" name="laporan_operasi" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="laporan_operasi" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>ASSESMEN PRA BEDAH</td>
@@ -238,36 +219,32 @@
                           <td> <input type="radio" value="lengkap" id="radio41" name="assesmen_keperawatan" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio42" name="assesmen_keperawatan" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="assesmen_keperawatan" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>TIMBANG TERIMA PRA-OP</td>
                           <td> <input type="radio" value="lengkap" id="radio43" name="timbang_terima" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio44" name="timbang_terima" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="timbang_terima" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>SET MARKING</td>
                           <td> <input type="radio" value="lengkap" id="radio45" name="set_marking" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio46" name="set_marking" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="set_marking" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>CEKLIST KESELAMATAN OP</td>
                           <td> <input type="radio" value="lengkap" id="radio47" name="ceklist_keselamatan" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio48" name="ceklist_keselamatan" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="ceklist_keselamatan" hidden checked /></td>
                         </tr>
                         <tr>
                           <td>PPI</td>
                           <td> <input type="radio" value="lengkap" id="radio49" name="ppi" />
                           </td>
                           <td> <input type="radio" value="tidak lengkap" id="radio50" name="ppi" /></td>
-                          <td> <input type="radio" value="" id="radio2" name="ppi" hidden checked /></td>
                         </tr>
+
                     </table>
                   </div>
                   <!-- /.card-body -->
@@ -298,164 +275,206 @@
 </html>
 <script type="text/javascript">
   // Make this a function.
-  function checkProgress() {
-    if ($("input:radio[name*='sbar']:checked").length != 0) {
-      if ($("input:radio[name*='card_x']:checked").length != 0) {
-        if ($("input:radio[name*='pemantauan']:checked").length != 0) {
-          if ($("input:radio[name*='inform_consent']:checked").length != 0) {
-            if ($("input:radio[name*='skrining']:checked").length != 0) {
-              if ($("input:radio[name*='pengkajian_kadar']:checked").length != 0) {
-                if ($("input:radio[name*='assesmen_awal']:checked").length != 0) {
-                  if ($("input:radio[name*='transfer_ruangan']:checked").length != 0) {
-                    if ($("input:radio[name*='resume']:checked").length != 0) {
-                      if ($("input:radio[name*='ringkasan_mk']:checked").length != 0) {
-                        if ($("input:radio[name*='assesmen_dpjp']:checked").length != 0) {
-                          if ($("input:radio[name*='pengkajian_bayi']:checked").length != 0) {
-                            if ($("input:radio[name*='pengkajian_perawat']:checked").length != 0) {
-                              if ($("input:radio[name*='asuhan_gizi']:checked").length != 0) {
-                                if ($("input:radio[name*='perencanaan_pasien_pulang']:checked").length != 0) {
-                                  if ($("input:radio[name*='obs_tanda_vital']:checked").length != 0) {
-                                    if ($("input:radio[name*='obs_suhu_nadi']:checked").length != 0) {
-                                      if ($("input:radio[name*='laporan_operasi']:checked").length != 0) {
-                                        if ($("input:radio[name*='assesmen_prabedah']:checked").length != 0) {
-                                          if ($("input:radio[name*='assesmen_praanastesi']:checked").length != 0) {
-                                            if ($("input:radio[name*='assesmen_keperawatan']:checked").length != 0) {
-                                              if ($("input:radio[name*='timbang_terima']:checked").length != 0) {
-                                                if ($("input:radio[name*='set_marking']:checked").length != 0) {
-                                                  if ($("input:radio[name*='ceklist_keselamatan']:checked").length != 0) {
-                                                    if ($("input:radio[name*='ppi']:checked").length != 0) {
-                                                      $('#simpansementara').prop('disabled', true);
-                                                      $('#simpan').prop('disabled', false);
-                                                    } else {
-                                                      $('#simpan').prop('disabled', true);
-                                                      $('#simpansementara').prop('disabled', false);
-                                                    }
-                                                  } else {
-                                                    $('#simpan').prop('disabled', true);
-                                                    $('#simpansementara').prop('disabled', false);
-                                                  }
+  $('input:radio[name="sbar"]').change(
+    function() {
+      if (this.value == 'lengkap') {
+        $('input:radio[name="card_x"]').change(
+          function() {
+            if (this.value == 'lengkap') {
+              $('input:radio[name="pemantauan"]').change(
+                function() {
+                  if (this.value == 'lengkap') {
+                    $('input:radio[name="inform_consent"]').change(
+                      function() {
+                        if (this.value == 'lengkap') {
+                          $('input:radio[name="skrining"]').change(
+                            function() {
+                              if (this.value == 'lengkap') {
+                                $('input:radio[name="pengkajian_kadar"]').change(
+                                  function() {
+                                    if (this.value == 'lengkap') {
+                                      $('input:radio[name="assesmen_awal"]').change(
+                                        function() {
+                                          if (this.value == 'lengkap') {
+                                            $('input:radio[name="transfer_ruangan"]').change(
+                                              function() {
+                                                if (this.value == 'lengkap') {
+                                                  $('input:radio[name="resume"]').change(
+                                                    function() {
+                                                      if (this.value == 'lengkap') {
+                                                        $('input:radio[name="ringkasan_mk"]').change(
+                                                          function() {
+                                                            if (this.value == 'lengkap') {
+                                                              $('input:radio[name="assesmen_dpjp"]').change(
+                                                                function() {
+                                                                  if (this.value == 'lengkap') {
+                                                                    $('input:radio[name="pengkajian_bayi"]').change(
+                                                                      function() {
+                                                                        if (this.value == 'lengkap') {
+                                                                          $('input:radio[name="pengkajian_perawat"]').change(
+                                                                            function() {
+                                                                              if (this.value == 'lengkap') {
+                                                                                $('input:radio[name="asuhan_gizi"]').change(
+                                                                                  function() {
+                                                                                    if (this.value == 'lengkap') {
+                                                                                      $('input:radio[name="perencanaan_pasien_pulang"]').change(
+                                                                                        function() {
+                                                                                          if (this.value == 'lengkap') {
+                                                                                            $('input:radio[name="obs_tanda_vital"]').change(
+                                                                                              function() {
+                                                                                                if (this.value == 'lengkap') {
+                                                                                                  $('input:radio[name="obs_suhu_nadi"]').change(
+                                                                                                    function() {
+                                                                                                      if (this.value == 'lengkap') {
+                                                                                                        $('input:radio[name="laporan_operasi"]').change(
+                                                                                                          function() {
+                                                                                                            if (this.value == 'lengkap') {
+                                                                                                              $('input:radio[name="assesmen_prabedah"]').change(
+                                                                                                                function() {
+                                                                                                                  if (this.value == 'lengkap') {
+                                                                                                                    $('input:radio[name="assesmen_praanastesi"]').change(
+                                                                                                                      function() {
+                                                                                                                        if (this.value == 'lengkap') {
+                                                                                                                          $('input:radio[name="assesmen_keperawatan"]').change(
+                                                                                                                            function() {
+                                                                                                                              if (this.value == 'lengkap') {
+                                                                                                                                $('input:radio[name="timbang_terima"]').change(
+                                                                                                                                  function() {
+                                                                                                                                    if (this.value == 'lengkap') {
+                                                                                                                                      $('input:radio[name="set_marking"]').change(
+                                                                                                                                        function() {
+                                                                                                                                          if (this.value == 'lengkap') {
+                                                                                                                                            $('input:radio[name="ceklist_keselamatan"]').change(
+                                                                                                                                              function() {
+                                                                                                                                                if (this.value == 'lengkap') {
+                                                                                                                                                  $('input:radio[name="ppi"]').change(
+                                                                                                                                                    function() {
+                                                                                                                                                      if (this.value == 'lengkap') {
+                                                                                                                                                        $('#simpansementara').prop('disabled', true);
+                                                                                                                                                        $('#simpan').prop('disabled', false);
+                                                                                                                                                      } else {
+                                                                                                                                                        $('#simpan').prop('disabled', true);
+                                                                                                                                                        $('#simpansementara').prop('disabled', false);
+                                                                                                                                                      }
+                                                                                                                                                    });
+                                                                                                                                                } else {
+                                                                                                                                                  $('#simpan').prop('disabled', true);
+                                                                                                                                                  $('#simpansementara').prop('disabled', false);
+                                                                                                                                                }
+                                                                                                                                              });
+                                                                                                                                          } else {
+                                                                                                                                            $('#simpan').prop('disabled', true);
+                                                                                                                                            $('#simpansementara').prop('disabled', false);
+                                                                                                                                          }
+                                                                                                                                        });
+                                                                                                                                    } else {
+                                                                                                                                      $('#simpan').prop('disabled', true);
+                                                                                                                                      $('#simpansementara').prop('disabled', false);
+                                                                                                                                    }
+                                                                                                                                  });
+                                                                                                                              } else {
+                                                                                                                                $('#simpan').prop('disabled', true);
+                                                                                                                                $('#simpansementara').prop('disabled', false);
+                                                                                                                              }
+                                                                                                                            });
+                                                                                                                        } else {
+                                                                                                                          $('#simpan').prop('disabled', true);
+                                                                                                                          $('#simpansementara').prop('disabled', false);
+                                                                                                                        }
+                                                                                                                      });
+                                                                                                                  } else {
+                                                                                                                    $('#simpan').prop('disabled', true);
+                                                                                                                    $('#simpansementara').prop('disabled', false);
+                                                                                                                  }
+                                                                                                                });
+                                                                                                            } else {
+                                                                                                              $('#simpan').prop('disabled', true);
+                                                                                                              $('#simpansementara').prop('disabled', false);
+                                                                                                            }
+                                                                                                          });
+                                                                                                      } else {
+                                                                                                        $('#simpan').prop('disabled', true);
+                                                                                                        $('#simpansementara').prop('disabled', false);
+                                                                                                      }
+                                                                                                    });
+                                                                                                } else {
+                                                                                                  $('#simpan').prop('disabled', true);
+                                                                                                  $('#simpansementara').prop('disabled', false);
+                                                                                                }
+                                                                                              });
+                                                                                          } else {
+                                                                                            $('#simpan').prop('disabled', true);
+                                                                                            $('#simpansementara').prop('disabled', false);
+                                                                                          }
+                                                                                        });
+                                                                                    } else {
+                                                                                      $('#simpan').prop('disabled', true);
+                                                                                      $('#simpansementara').prop('disabled', false);
+                                                                                    }
+                                                                                  });
+                                                                              } else {
+                                                                                $('#simpan').prop('disabled', true);
+                                                                                $('#simpansementara').prop('disabled', false);
+                                                                              }
+                                                                            });
+                                                                        } else {
+                                                                          $('#simpan').prop('disabled', true);
+                                                                          $('#simpansementara').prop('disabled', false);
+                                                                        }
+                                                                      });
+                                                                  } else {
+                                                                    $('#simpan').prop('disabled', true);
+                                                                    $('#simpansementara').prop('disabled', false);
+                                                                  }
+                                                                });
+                                                            } else {
+                                                              $('#simpan').prop('disabled', true);
+                                                              $('#simpansementara').prop('disabled', false);
+                                                            }
+                                                          });
+                                                      } else {
+                                                        $('#simpan').prop('disabled', true);
+                                                        $('#simpansementara').prop('disabled', false);
+                                                      }
+                                                    });
                                                 } else {
                                                   $('#simpan').prop('disabled', true);
                                                   $('#simpansementara').prop('disabled', false);
                                                 }
-                                              } else {
-                                                $('#simpan').prop('disabled', true);
-                                                $('#simpansementara').prop('disabled', false);
-                                              }
-                                            } else {
-                                              $('#simpan').prop('disabled', true);
-                                              $('#simpansementara').prop('disabled', false);
-                                            }
+                                              });
                                           } else {
                                             $('#simpan').prop('disabled', true);
                                             $('#simpansementara').prop('disabled', false);
                                           }
-                                        } else {
-                                          $('#simpan').prop('disabled', true);
-                                          $('#simpansementara').prop('disabled', false);
-                                        }
-                                      } else {
-                                        $('#simpan').prop('disabled', true);
-                                        $('#simpansementara').prop('disabled', false);
-                                      }
+                                        });
                                     } else {
                                       $('#simpan').prop('disabled', true);
                                       $('#simpansementara').prop('disabled', false);
                                     }
-                                  } else {
-                                    $('#simpan').prop('disabled', true);
-                                    $('#simpansementara').prop('disabled', false);
-                                  }
-                                } else {
-                                  $('#simpan').prop('disabled', true);
-                                  $('#simpansementara').prop('disabled', false);
-                                }
+                                  });
                               } else {
                                 $('#simpan').prop('disabled', true);
                                 $('#simpansementara').prop('disabled', false);
                               }
-                            } else {
-                              $('#simpan').prop('disabled', true);
-                              $('#simpansementara').prop('disabled', false);
-                            }
-                          } else {
-                            $('#simpan').prop('disabled', true);
-                            $('#simpansementara').prop('disabled', false);
-                          }
+                            });
                         } else {
                           $('#simpan').prop('disabled', true);
                           $('#simpansementara').prop('disabled', false);
                         }
-                      } else {
-                        $('#simpan').prop('disabled', true);
-                        $('#simpansementara').prop('disabled', false);
-                      }
-                    } else {
-                      $('#simpan').prop('disabled', true);
-                      $('#simpansementara').prop('disabled', false);
-                    }
+                      });
                   } else {
                     $('#simpan').prop('disabled', true);
                     $('#simpansementara').prop('disabled', false);
                   }
-                } else {
-                  $('#simpan').prop('disabled', true);
-                  $('#simpansementara').prop('disabled', false);
-                }
-              } else {
-                $('#simpan').prop('disabled', true);
-                $('#simpansementara').prop('disabled', false);
-              }
+                });
             } else {
               $('#simpan').prop('disabled', true);
               $('#simpansementara').prop('disabled', false);
             }
-          } else {
-            $('#simpan').prop('disabled', true);
-            $('#simpansementara').prop('disabled', false);
-          }
-        } else {
-          $('#simpan').prop('disabled', true);
-          $('#simpansementara').prop('disabled', false);
-        }
+          });
       } else {
         $('#simpan').prop('disabled', true);
         $('#simpansementara').prop('disabled', false);
       }
-    } else {
-      $('#simpan').prop('disabled', true);
-      $('#simpansementara').prop('disabled', false);
-    }
-  }
-
-  $(function() {
-    // Set the status once the doc loads.
-    checkProgress();
-    // Set it again when any of the radio buttons are clicked.
-    $("input:radio[name*='sbar']").on("click change", checkProgress);
-    $("input:radio[name*='card_x']").on("click change", checkProgress);
-    $("input:radio[name*='pemantauan']").on("click change", checkProgress);
-    $("input:radio[name*='inform_consent']").on("click change", checkProgress);
-    $("input:radio[name*='skrining']").on("click change", checkProgress);
-    $("input:radio[name*='pengkajian_kadar']").on("click change", checkProgress);
-    $("input:radio[name*='assesmen_awal']").on("click change", checkProgress);
-    $("input:radio[name*='transfer_ruangan']").on("click change", checkProgress);
-    $("input:radio[name*='resume']").on("click change", checkProgress);
-    $("input:radio[name*='ringkasan_mk']").on("click change", checkProgress);
-    $("input:radio[name*='assesmen_dpjp']").on("click change", checkProgress);
-    $("input:radio[name*='pengkajian_bayi']").on("click change", checkProgress);
-    $("input:radio[name*='pengkajian_perawat']").on("click change", checkProgress);
-    $("input:radio[name*='asuhan_gizi']").on("click change", checkProgress);
-    $("input:radio[name*='perencanaan_pasien_pulang']").on("click change", checkProgress);
-    $("input:radio[name*='obs_tanda_vital']").on("click change", checkProgress);
-    $("input:radio[name*='obs_suhu_nadi']").on("click change", checkProgress);
-    $("input:radio[name*='laporan_operasi']").on("click change", checkProgress);
-    $("input:radio[name*='assesmen_prabedah']").on("click change", checkProgress);
-    $("input:radio[name*='assesmen_praanastesi']").on("click change", checkProgress);
-    $("input:radio[name*='assesmen_keperawatan']").on("click change", checkProgress);
-    $("input:radio[name*='timbang_terima']").on("click change", checkProgress);
-    $("input:radio[name*='set_marking']").on("click change", checkProgress);
-    $("input:radio[name*='ceklist_keselamatan']").on("click change", checkProgress);
-    $("input:radio[name*='ppi']").on("click change", checkProgress);
-  });
+    });
 </script>

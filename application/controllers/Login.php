@@ -14,6 +14,7 @@ class Login extends CI_Controller{
             </script>";//Url tujuan
 		}
 	}
+	
 	function index(){
 		$data['judul'] = 'Login';
 		$this->load->view('v_login', $data);
