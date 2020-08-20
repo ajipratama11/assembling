@@ -65,11 +65,7 @@
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Asal Ruangan</label>
-                      <select class="form-control" name="asal_ruangan">
-                        <option>--- Pilih Asal Ruangan ---</option>
-                        <option value="Rawat Inap">Ruang Rawat Inap</option>
-                        <option value="Rawat Jalan">Ruang Rawat Jalan</option>
-                      </select>
+                      <input type="text" placeholder="Asal Ruangan" name="asal_ruangan" class="form-control">
                     </div>
                     <div class="form-group col-md-4">
                       <label for="exampleInputEmail1">Tanggal Cek</label>
