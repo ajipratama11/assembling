@@ -31,12 +31,12 @@
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">Tabel Data Cek Kelengkapan</h5>
-                    <a href="<?= base_url('Laporan/cetak') ?>" class="btn btn-success">Cetak</a>
+                    <a href="" class="btn btn-success">Cetak</a>
                     <h5><?= $this->session->flashdata('success') ?></h5>
                 </div>
                 <!-- /.content-header -->
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>No Transaksi</th>
@@ -46,10 +46,6 @@
                                 <th>Jenis Layanan</th>
                                 <th>Asal Ruangan</th>
                                 <th>Catatan</th>
-                                <?php $jabatan = $this->session->userdata('jabatan'); ?>
-                                <?php if ($jabatan == 1) { ?>
-                                    <th>Opsi</th>
-                                <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,12 +58,6 @@
                                     <td><?= $l->jenis_pelayanan ?></td>
                                     <td><?= $l->asal_ruangan ?></td>
                                     <td><?= $l->catatan ?></td>
-                                    <?php if ($jabatan == 1) { ?>
-                                        <td>
-                                            <a href="<?php echo site_url('Laporan/update_cekkel/' . $l->no_transaksi) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="<?php echo base_url('Laporan/hapusSementara/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
-                                        </td>
-                                    <?php } ?>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -77,6 +67,9 @@
         </div>
     </div>
     <?php $this->load->view('templates/footer') ?>
+    <script>
+        window.print();
+    </script>
 </body>
 
 </html>

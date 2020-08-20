@@ -45,7 +45,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">No Rekam Medis</label>
-                                            <input type="text" name="no_rekdis" value="<?= $rekdis->no_rekdis ?>" class="form-control" id="exampleInputEmail1" placeholder="Isi No Rekam Medis">
+                                            <input type="text" name="no_rekdis" value="<?= $rekdis->no_rekdis ?>" class="form-control" id="exampleInputEmail1" placeholder="Isi No Rekam Medis" readonly>
                                             <?= form_error('no_rekdis', '<small class="text-danger pl-3">', '</small>') ?>
                                         </div>
                                         <div class="form-group">

@@ -77,6 +77,10 @@
                       <input type="hidden" name="nama_form" value="Form Kelengkapan" class="form-control">
                       <input type="hidden" name="status_2" value="Terbaca" class="form-control">
                     </div>
+                    <div class="form-group col-md-12">
+                      <label for="exampleInputEmail1">Catatan</label>
+                      <textarea type="text" name="catatan" class="form-control" placeholder="Catatan"></textarea>
+                    </div>
 
                   </div>
 
