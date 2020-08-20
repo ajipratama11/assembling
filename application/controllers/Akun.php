@@ -66,4 +66,30 @@ class Akun extends CI_Controller
             $this->load->view('v_editAkun', $data);
         }  
     }
+
+    public function ubahPassword()
+    {
+        $iduser = $this->session->userdata('iduser');
+        $passwordlama = $this->input->post('passwordlama');
+        $passwordbaru = $this->input->post('passwordbaru');
+        $where = array(
+            'id_user' => $iduser,
+            'password' => $passwordlama
+			);
+        $cek = $this->M_akun->cekusername("user",$where)->num_rows();
+        if($cek > 0){
+            $this->db->set('password', $passwordbaru);
+            $this->db->where('id_user', $iduser);
+            $this->db->update('user');
+            redirect('Beranda');
+        }else{
+            echo "<script>
+            alert('Password Lama Anda Salah');
+            window.location.href = '".base_url('Beranda')."';
+        </script>";//Url tujuan
+        }
+
+        
+
+    }
 }

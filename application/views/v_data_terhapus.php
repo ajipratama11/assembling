@@ -43,7 +43,10 @@
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat</th>
+                                <?php $jabatan = $this->session->userdata('jabatan'); ?>
+        <?php if ($jabatan == 1) { ?>
                                 <th>Opsi</th>
+        <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,10 +57,12 @@
                                     <td><?= $r->tgl_lahir ?></>
                                     <td><?= $r->jenis_kelamin ?></td>
                                     <td><?= $r->alamat ?></td>
+                                    <?php if ($jabatan == 1) { ?>
                                     <td>
                                         <a type="button" href="<?= base_url('Data/restore/' . $r->no_rekdis);   ?>" onclick="return confirm('Apakah Anda Ingin Mengembalikan Data  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small text-success"><i class="fa fa-undo"></i> Restore</a> |
                                         <a type="button" href="<?= base_url('Data/hapusData/' . $r->no_rekdis);   ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Permanen  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small text-danger"><i class="fa fa-edit"></i> Hapus Permanen</a>
                                     </td>
+                                    <?php } ?>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

@@ -46,7 +46,10 @@
                                 <th>Jenis Layanan</th>
                                 <th>Asal Ruangan</th>
                                 <th>Catatan</th>
-                                <th>Opsi</th>
+                                <?php $jabatan = $this->session->userdata('jabatan'); ?>
+                                <?php if ($jabatan == 1) { ?>
+                                    <th>Opsi</th>
+                                <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -59,10 +62,12 @@
                                     <td><?= $l->jenis_pelayanan ?></td>
                                     <td><?= $l->asal_ruangan ?></td>
                                     <td><?= $l->catatan ?></td>
-                                    <td>
-                                        <a href="<?php echo site_url('Laporan/update_cekkel/' . $l->no_transaksi) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
-                                        <a href="<?php echo base_url('Laporan/hapusSementara/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
-                                    </td>
+                                    <?php if ($jabatan == 1) { ?>
+                                        <td>
+                                            <a href="<?php echo site_url('Laporan/update_cekkel/' . $l->no_transaksi) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
+                                            <a href="<?php echo base_url('Laporan/hapusSementara/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                        </td>
+                                    <?php } ?>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
