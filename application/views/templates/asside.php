@@ -24,7 +24,7 @@
                with font-awesome or any other icon font library -->
 
         <li class="nav-item">
-          <a href="<?= base_url(); ?>assets/template/pages/widgets.html" class="nav-link">
+          <a href="<?= base_url('Beranda'); ?>" class="nav-link">
             <i class="nav-icon fa fa-dashboard"></i>
             <p>
               Beranda

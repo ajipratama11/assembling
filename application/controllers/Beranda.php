@@ -19,6 +19,7 @@ class Beranda extends CI_Controller
 
     public function index(){
         //datakeseluruhan
+        $data['judul'] = 'Beranda';
         $data1 = $this->db->query("SELECT * FROM `cek_kelengkapan`")->result();
         $datakeseluruhan = count($data1);
         $data['seluruh'] = $datakeseluruhan;
