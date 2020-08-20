@@ -87,6 +87,10 @@
                                             <input type="hidden" name="nama_form" value="<?= $update->nama_form ?>" class="form-control" id="exampleInputEmail1">
                                             <input type="hidden" name="status_2" value="<?= $update->status_2 ?>" class="form-control" id="exampleInputEmail1">
                                         </div>
+                                        <div class="form-group col-md-12">
+                                            <label for="exampleInputEmail1">Catatan</label>
+                                            <textarea type="text" name="catatan" class="form-control" placeholder="Catatan"><?= $update->catatan ?></textarea>
+                                        </div>
 
                                     </div>
 

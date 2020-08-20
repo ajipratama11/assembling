@@ -31,12 +31,12 @@
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">Tabel Data Cek Kelengkapan</h5>
-                    <a href="<?= base_url('Laporan/cetak') ?>" class="btn btn-success">Cetak</a>
+                    <a href="" class="btn btn-success">Cetak</a>
                     <h5><?= $this->session->flashdata('success') ?></h5>
                 </div>
                 <!-- /.content-header -->
                 <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
+                    <table>
                         <thead>
                             <tr>
                                 <th>No Transaksi</th>
@@ -72,6 +72,9 @@
         </div>
     </div>
     <?php $this->load->view('templates/footer') ?>
+    <script>
+        window.print();
+    </script>
 </body>
 
 </html>

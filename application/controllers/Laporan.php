@@ -54,6 +54,12 @@ class Laporan extends CI_Controller
         $this->load->view('v_laporan', $data);
     }
 
+    public function cetak()
+    {
+        $data['laporan'] = $this->M_cek_kelengkapan->get_cekkel();
+        $this->load->view('cetak', $data);
+    }
+
     public function formterhapus()
     {
         $data['judul'] = 'tabel Terhapus cek kelengkapan';

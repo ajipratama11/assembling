@@ -51,6 +51,7 @@ class M_cek_kelengkapan extends CI_Model
         $this->asal_ruangan = $post['asal_ruangan'];
         $this->tgl_cek = $post['tgl_cek'];
         $this->nama_form = $post['nama_form'];
+        $this->catatan = $post['catatan'];
         $this->card_x = $post['card_x'];
         $this->inform_consent = $post['inform_consent'];
         $this->pemantauan = $post['pemantauan'];
@@ -91,6 +92,7 @@ class M_cek_kelengkapan extends CI_Model
         $this->asal_ruangan = $post['asal_ruangan'];
         $this->tgl_cek = $post['tgl_cek'];
         $this->nama_form = $post['nama_form'];
+        $this->catatan = $post['catatan'];
         $this->card_x = $post['card_x'];
         $this->inform_consent = $post['inform_consent'];
         $this->pemantauan = $post['pemantauan'];
