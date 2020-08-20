@@ -35,7 +35,10 @@
                 </div>
                 <!-- /.content-header -->
                 <div class="card-body">
+                <?php $jabatan = $this->session->userdata('jabatan'); ?>
+        <?php if ($jabatan == 1) { ?>
                     <a href="<?= base_url('Data/add_rekdis') ?>" class="btn btn-success">Tambah Data</a>
+        <?php } ?>
                     <br>
                     <br>
                     <table id="example1" class="table table-bordered table-striped">
@@ -46,7 +49,9 @@
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat</th>
+                                <?php if ($jabatan == 1) { ?>
                                 <th>Opsi</th>
+                                <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,10 +62,12 @@
                                     <td><?= $r->tgl_lahir ?></td>
                                     <td><?= $r->jenis_kelamin ?></td>
                                     <td><?= $r->alamat ?></td>
+                                    <?php if ($jabatan == 1) { ?>
                                     <td>
                                         <a href="<?php echo site_url('Data/edit/' . $r->no_rekdis) ?>" class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
                                         <a href="<?php echo base_url('Data/hapusSementara/' . $r->no_rekdis); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
+                                    <?php } ?>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

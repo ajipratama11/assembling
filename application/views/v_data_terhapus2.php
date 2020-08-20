@@ -46,7 +46,10 @@
                                 <th>Keterangan Lengkap/Tidak Lengkap</th>
                                 <th>Jenis Layanan</th>
                                 <th>Asal Ruangan</th>
+                                <?php $jabatan = $this->session->userdata('jabatan'); ?>
+                                <?php if ($jabatan == 1) { ?>
                                 <th>Opsi</th>
+                                <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,10 +61,12 @@
                                     <td><?= $l->status ?></td>
                                     <td><?= $l->jenis_pelayanan ?></td>
                                     <td><?= $l->asal_ruangan ?></td>
+                                    <?php if ($jabatan == 1) { ?>
                                     <td>
                                         <a type="button" href="<?= base_url('Laporan/restore/' . $l->no_transaksi);   ?>" onclick="return confirm('Apakah Anda Ingin Mengembalikan Data  ?');" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus" class="btn btn-small text-success"><i class="fa fa-undo"></i></i> Restore</a> |
                                         <a href="<?php echo base_url('Laporan/hapus_cek_kelengkapan/' . $l->no_transaksi); ?>" onclick="return confirm('Apakah Anda Ingin Menghapus Data  ?');" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
+                                    <?php } ?>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

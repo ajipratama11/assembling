@@ -31,6 +31,8 @@
             </p>
           </a>
         </li>
+        <?php $jabatan = $this->session->userdata('jabatan'); ?>
+        <?php if ($jabatan != 2) { ?>
         <li class="nav-item">
           <a href="<?= base_url('Data/tabel_rekdis'); ?>" class="nav-link">
             <i class="nav-icon fa fa-book"></i>
@@ -39,14 +41,17 @@
             </p>
           </a>
         </li>
+        <?php } ?>
+        <?php if ($jabatan == 1) { ?>
         <li class="nav-item">
-          <a type="button" data-toggle="modal" data-target="#modalAkun" class="nav-link">
+          <a type="button" data-toggle="modal" data-target="#modalRekdis" class="nav-link">
             <i class="nav-icon fa fa-edit"></i>
             <p>
               Cek Kelengkapan
             </p>
           </a>
         </li>
+        <?php } ?>
         <li class="nav-item">
           <a href="<?= base_url('Akun'); ?>" class="nav-link">
             <i class="nav-icon fa fa-user"></i>
@@ -63,6 +68,7 @@
             </p>
           </a>
         </li>
+        <?php if ($jabatan != 2) { ?>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-trash"></i>
@@ -86,13 +92,14 @@
             </li>
           </ul>
         </li>
+        <?php } ?>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
   </div>
   <!-- /.sidebar -->
 </aside>
-<div class="modal fade" id="modalAkun" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalRekdis" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
