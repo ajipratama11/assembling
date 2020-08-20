@@ -11,12 +11,12 @@ class Laporan extends CI_Controller
         $this->load->helper(array('form', 'url'));
         $this->load->model('M_cek_kelengkapan');
         $this->load->model('M_Rekdis');
-        // if($this->session->userdata('status') != "admin"){
-        // 	echo "<script>
-        //         alert('Anda harus login terlebih dahulu');
-        //         window.location.href = '".base_url('Owner_controller/A_login')."';
-        //     </script>";//Url tujuan
-        // }
+        if($this->session->userdata('status') != "admin"){
+        	echo "<script>
+                alert('Anda harus login terlebih dahulu');
+                window.location.href = '".base_url('Login')."';
+            </script>";//Url tujuan
+        }
     }
 
     public function index()
