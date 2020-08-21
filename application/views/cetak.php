@@ -32,7 +32,7 @@
                 <div class="card-header">
                     <div class="col">
                         <div class="row">
-                            <img src="<?= base_url() ?>assets/admin/images/ch.png" width="100" height="100">
+                            <img src="<?= base_url() ?>assets/admin/images/ch.png" style="margin-left: 10px;" width="100" height="100">
                             <h5 class="card-title" style="margin-left: 30%; margin-top: 30px;">Rumah Sakit Citra Husada Jember</h5>
                             <br>
                         </div>
