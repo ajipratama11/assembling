@@ -32,7 +32,7 @@
           </a>
         </li>
         <?php $jabatan = $this->session->userdata('jabatan'); ?>
-        <?php if ($jabatan != 2) { ?>
+        <?php if ($jabatan != 3) { ?>
         <li class="nav-item">
           <a href="<?= base_url('Data/tabel_rekdis'); ?>" class="nav-link">
             <i class="nav-icon fa fa-book"></i>
@@ -68,7 +68,7 @@
             </p>
           </a>
         </li>
-        <?php if ($jabatan != 2) { ?>
+        <?php if ($jabatan != 3) { ?>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-trash"></i>
