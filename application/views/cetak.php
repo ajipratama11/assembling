@@ -30,9 +30,13 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Tabel Data Cek Kelengkapan</h5>
-                    <a href="" class="btn btn-success">Cetak</a>
-                    <h5><?= $this->session->flashdata('success') ?></h5>
+                    <div class="col">
+                        <div class="row">
+                            <img src="<?= base_url() ?>assets/admin/images/ch.png" width="100" height="100">
+                            <h5 class="card-title" style="margin-left: 30%; margin-top: 30px;">Rumah Sakit Citra Husada Jember</h5>
+                            <br>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.content-header -->
                 <div class="card-body">
