@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2020 at 03:36 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Waktu pembuatan: 22 Agu 2020 pada 01.22
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `archived_documents`
+-- Struktur dari tabel `archived_documents`
 --
 
 CREATE TABLE `archived_documents` (
@@ -65,8 +65,8 @@ CREATE TABLE `archived_documents` (
   `ad_map` varchar(20) DEFAULT NULL,
   `ad_kode_map` varchar(20) DEFAULT NULL,
   `ad_status` enum('Penuh','Kosong','Diambil') DEFAULT NULL,
-  `ad_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `ad_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ad_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `ad_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `ad_deleted_at` timestamp NULL DEFAULT NULL,
   `ad_restored_at` timestamp NULL DEFAULT NULL,
   `ad_created_by` varchar(50) DEFAULT NULL,
@@ -74,12 +74,12 @@ CREATE TABLE `archived_documents` (
   `ad_deleted_by` varchar(50) DEFAULT NULL,
   `ad_restored_by` varchar(50) DEFAULT NULL,
   `ad_is_deleted` enum('TRUE','FALSE') DEFAULT 'FALSE',
-  `ad_taken_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `ad_taken_at` timestamp NULL DEFAULT current_timestamp(),
   `ad_taken_by` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `archived_documents`
+-- Dumping data untuk tabel `archived_documents`
 --
 
 INSERT INTO `archived_documents` (`ad_id`, `ad_sid`, `ad_ijazah`, `ad_ijazah_added_at`, `ad_ijazah_borrowed_at`, `ad_ijazah_returned_at`, `ad_ijazah_added_by`, `ad_ijazah_borrowed_by`, `ad_ijazah_returned_by`, `ad_skhun`, `ad_skhun_added_at`, `ad_skhun_borrowed_at`, `ad_skhun_returned_at`, `ad_skhun_added_by`, `ad_skhun_borrowed_by`, `ad_skhun_returned_by`, `ad_kk`, `ad_kk_added_at`, `ad_kk_added_by`, `ad_ktpa`, `ad_ktpa_added_at`, `ad_ktpa_added_by`, `ad_ktpi`, `ad_ktpi_added_at`, `ad_ktpi_added_by`, `ad_kips`, `ad_kips_added_at`, `ad_kips_added_by`, `ad_sktm`, `ad_sktm_added_at`, `ad_sktm_added_by`, `ad_cname`, `ad_fname`, `ad_map`, `ad_kode_map`, `ad_status`, `ad_created_at`, `ad_updated_at`, `ad_deleted_at`, `ad_restored_at`, `ad_created_by`, `ad_updated_by`, `ad_deleted_by`, `ad_restored_by`, `ad_is_deleted`, `ad_taken_at`, `ad_taken_by`) VALUES
@@ -93,14 +93,14 @@ INSERT INTO `archived_documents` (`ad_id`, `ad_sid`, `ad_ijazah`, `ad_ijazah_add
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cabinets`
+-- Struktur dari tabel `cabinets`
 --
 
 CREATE TABLE `cabinets` (
   `c_id` char(5) NOT NULL,
   `c_name` varchar(20) DEFAULT NULL,
-  `c_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `c_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `c_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `c_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `c_deleted_at` timestamp NULL DEFAULT NULL,
   `c_restored_at` timestamp NULL DEFAULT NULL,
   `c_created_by` char(5) DEFAULT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE `cabinets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cabinets`
+-- Dumping data untuk tabel `cabinets`
 --
 
 INSERT INTO `cabinets` (`c_id`, `c_name`, `c_created_at`, `c_updated_at`, `c_deleted_at`, `c_restored_at`, `c_created_by`, `c_updated_by`, `c_deleted_by`, `c_restored_by`, `c_is_deleted`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `cabinets` (`c_id`, `c_name`, `c_created_at`, `c_updated_at`, `c_del
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cek_kelengkapan`
+-- Struktur dari tabel `cek_kelengkapan`
 --
 
 CREATE TABLE `cek_kelengkapan` (
@@ -130,6 +130,7 @@ CREATE TABLE `cek_kelengkapan` (
   `nama_pasien` varchar(100) NOT NULL,
   `jenis_pelayanan` varchar(50) NOT NULL,
   `asal_ruangan` varchar(50) NOT NULL,
+  `catatan` varchar(50) NOT NULL,
   `tgl_cek` date NOT NULL,
   `nama_form` varchar(25) NOT NULL,
   `card_x` varchar(20) DEFAULT NULL,
@@ -158,37 +159,35 @@ CREATE TABLE `cek_kelengkapan` (
   `ceklist_keselamatan` varchar(25) DEFAULT NULL,
   `ppi` varchar(25) DEFAULT NULL,
   `status` varchar(25) DEFAULT NULL,
-  `status_2` varchar(25) DEFAULT NULL,
-  `catatan` text
+  `status_2` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `cek_kelengkapan`
+-- Dumping data untuk tabel `cek_kelengkapan`
 --
 
-INSERT INTO `cek_kelengkapan` (`no_transaksi`, `no_rekdis`, `nama_pasien`, `jenis_pelayanan`, `asal_ruangan`, `tgl_cek`, `nama_form`, `card_x`, `inform_consent`, `pemantauan`, `pengkajian_kadar`, `sbar`, `skrining`, `assesmen_awal`, `transfer_ruangan`, `resume`, `ringkasan_mk`, `assesmen_dpjp`, `pengkajian_bayi`, `pengkajian_perawat`, `asuhan_gizi`, `perencanaan_pasien_pulang`, `obs_tanda_vital`, `obs_suhu_nadi`, `laporan_operasi`, `assesmen_prabedah`, `assesmen_praanastesi`, `assesmen_keperawatan`, `timbang_terima`, `set_marking`, `ceklist_keselamatan`, `ppi`, `status`, `status_2`, `catatan`) VALUES
-(2, '18147184', 'Aji Pratama', 'Rawat Jalan', 'Rawat Jalan', '2020-08-16', 'Form Kelengkapan', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'Lengkap', 'Terbaca', NULL),
-(3, '10101010', 'Denis Alexandria', 'Rawat Inap', 'Rawat Inap', '2020-08-18', 'Form Kelengkapan', 'lengkap', NULL, 'tidak lengkap', 'lengkap', 'lengkap', NULL, 'lengkap', 'tidak lengkap', 'tidak lengkap', 'lengkap', 'lengkap', 'tidak lengkap', 'tidak lengkap', NULL, 'lengkap', 'lengkap', 'tidak lengkap', 'tidak lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', NULL, 'lengkap', 'lengkap', 'Tidak Lengkap', 'Terbaca', NULL),
-(4, '12345678', 'Risma Anggraeni', 'Rawat Inap', 'Rawat Inap', '0000-00-00', 'Form Kelengkapan', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'Lengkap', 'Terbaca', NULL),
-(9, '81818181', 'Ardiyan Ramadhan', 'Rawat Inap', 'Rawat Jalan', '2020-08-18', 'Form Kelengkapan', NULL, NULL, 'tidak lengkap', 'lengkap', 'lengkap', 'lengkap', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'lengkap', 'lengkap', 'lengkap', NULL, NULL, NULL, NULL, 'lengkap', NULL, NULL, NULL, NULL, 'Tidak Lengkap', 'Terbaca', NULL),
-(11, '20202020', 'Rahmad', 'Rawat Jalan', 'Rawat Jalan', '2020-08-20', 'Form Kelengkapan', 'tidak lengkap', 'lengkap', 'lengkap', '', 'lengkap', '', 'lengkap', '', 'tidak lengkap', '', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', 'Tidak Lengkap', 'Terbaca', 'SKRINING kurang TTD,  Transfer Ruangan Kurang TTD'),
-(12, '30303030', 'Hana Rizky Zafira', 'Rawat Inap', 'Rawat Inap', '2020-08-21', 'Form Kelengkapan', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'Lengkap', 'Terbaca', '');
+INSERT INTO `cek_kelengkapan` (`no_transaksi`, `no_rekdis`, `nama_pasien`, `jenis_pelayanan`, `asal_ruangan`, `catatan`, `tgl_cek`, `nama_form`, `card_x`, `inform_consent`, `pemantauan`, `pengkajian_kadar`, `sbar`, `skrining`, `assesmen_awal`, `transfer_ruangan`, `resume`, `ringkasan_mk`, `assesmen_dpjp`, `pengkajian_bayi`, `pengkajian_perawat`, `asuhan_gizi`, `perencanaan_pasien_pulang`, `obs_tanda_vital`, `obs_suhu_nadi`, `laporan_operasi`, `assesmen_prabedah`, `assesmen_praanastesi`, `assesmen_keperawatan`, `timbang_terima`, `set_marking`, `ceklist_keselamatan`, `ppi`, `status`, `status_2`) VALUES
+(2, '18147184', 'Aji Pratama', 'Rawat Jalan', 'Rawat Jalan', 'asasas', '2020-08-16', 'Form Kelengkapan', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'Lengkap', 'Terbaca'),
+(3, '10101010', 'Denis Alexandria', 'Rawat Inap', 'Rawat Inap', '', '2020-08-18', 'Form Kelengkapan', 'lengkap', NULL, 'tidak lengkap', 'lengkap', 'lengkap', NULL, 'lengkap', 'tidak lengkap', 'tidak lengkap', 'lengkap', 'lengkap', 'tidak lengkap', 'tidak lengkap', NULL, 'lengkap', 'lengkap', 'tidak lengkap', 'tidak lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', NULL, 'lengkap', 'lengkap', 'Tidak Lengkap', 'Terbaca'),
+(4, '12345678', 'Risma Anggraeni', 'Rawat Inap', 'Rawat Inap', '', '0000-00-00', 'Form Kelengkapan', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'Lengkap', 'Terbaca'),
+(9, '81818181', 'Ardiyan Ramadhan', 'Rawat Inap', 'Rawat Jalan', '', '2020-08-18', 'Form Kelengkapan', NULL, NULL, 'tidak lengkap', 'lengkap', 'lengkap', 'lengkap', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'lengkap', 'lengkap', 'lengkap', NULL, NULL, NULL, NULL, 'lengkap', NULL, NULL, NULL, NULL, 'Tidak Lengkap', 'Terbaca'),
+(10, '20202020', 'Rahmad', 'Rawat Inap', 'Rawat Inap', '', '0000-00-00', 'Form Kelengkapan', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'lengkap', 'Lengkap', 'Terbaca');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ci_sessions`
+-- Struktur dari tabel `ci_sessions`
 --
 
 CREATE TABLE `ci_sessions` (
   `id` varchar(128) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
-  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ci_sessions`
+-- Dumping data untuk tabel `ci_sessions`
 --
 
 INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
@@ -203,7 +202,7 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `documents`
+-- Struktur dari tabel `documents`
 --
 
 CREATE TABLE `documents` (
@@ -243,8 +242,8 @@ CREATE TABLE `documents` (
   `d_map` varchar(20) DEFAULT NULL,
   `d_kode_map` varchar(20) DEFAULT NULL,
   `d_status` enum('Penuh','Kosong','Diambil') DEFAULT NULL,
-  `d_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `d_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `d_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `d_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `d_deleted_at` timestamp NULL DEFAULT NULL,
   `d_restored_at` timestamp NULL DEFAULT NULL,
   `d_created_by` varchar(50) DEFAULT NULL,
@@ -255,7 +254,7 @@ CREATE TABLE `documents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `documents`
+-- Dumping data untuk tabel `documents`
 --
 
 INSERT INTO `documents` (`d_id`, `d_sid`, `d_ijazah`, `d_ijazah_added_at`, `d_ijazah_borrowed_at`, `d_ijazah_returned_at`, `d_ijazah_added_by`, `d_ijazah_borrowed_by`, `d_ijazah_returned_by`, `d_skhun`, `d_skhun_added_at`, `d_skhun_borrowed_at`, `d_skhun_returned_at`, `d_skhun_added_by`, `d_skhun_borrowed_by`, `d_skhun_returned_by`, `d_kk`, `d_kk_added_at`, `d_kk_added_by`, `d_ktpa`, `d_ktpa_added_at`, `d_ktpa_added_by`, `d_ktpi`, `d_ktpi_added_at`, `d_ktpi_added_by`, `d_kips`, `d_kips_added_at`, `d_kips_added_by`, `d_sktm`, `d_sktm_added_at`, `d_sktm_added_by`, `d_cname`, `d_fname`, `d_map`, `d_kode_map`, `d_status`, `d_created_at`, `d_updated_at`, `d_deleted_at`, `d_restored_at`, `d_created_by`, `d_updated_by`, `d_deleted_by`, `d_restored_by`, `d_is_deleted`) VALUES
@@ -265,14 +264,14 @@ INSERT INTO `documents` (`d_id`, `d_sid`, `d_ijazah`, `d_ijazah_added_at`, `d_ij
 -- --------------------------------------------------------
 
 --
--- Table structure for table `folders`
+-- Struktur dari tabel `folders`
 --
 
 CREATE TABLE `folders` (
   `f_id` char(5) NOT NULL,
   `f_name` varchar(20) DEFAULT NULL,
-  `f_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `f_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `f_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `f_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `f_deleted_at` timestamp NULL DEFAULT NULL,
   `f_restored_at` timestamp NULL DEFAULT NULL,
   `f_created_by` char(5) DEFAULT NULL,
@@ -283,7 +282,7 @@ CREATE TABLE `folders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `folders`
+-- Dumping data untuk tabel `folders`
 --
 
 INSERT INTO `folders` (`f_id`, `f_name`, `f_created_at`, `f_updated_at`, `f_deleted_at`, `f_restored_at`, `f_created_by`, `f_updated_by`, `f_deleted_by`, `f_restored_by`, `f_is_deleted`) VALUES
@@ -294,7 +293,7 @@ INSERT INTO `folders` (`f_id`, `f_name`, `f_created_at`, `f_updated_at`, `f_dele
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatan`
+-- Struktur dari tabel `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -303,7 +302,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jabatan`
+-- Dumping data untuk tabel `jabatan`
 --
 
 INSERT INTO `jabatan` (`id_jabatan`, `jabatan`) VALUES
@@ -314,14 +313,14 @@ INSERT INTO `jabatan` (`id_jabatan`, `jabatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `majors`
+-- Struktur dari tabel `majors`
 --
 
 CREATE TABLE `majors` (
   `m_id` varchar(3) NOT NULL,
   `m_name` varchar(50) DEFAULT NULL,
-  `m_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `m_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `m_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `m_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `m_deleted_at` timestamp NULL DEFAULT NULL,
   `m_restored_at` timestamp NULL DEFAULT NULL,
   `m_created_by` char(5) DEFAULT NULL,
@@ -332,7 +331,7 @@ CREATE TABLE `majors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `majors`
+-- Dumping data untuk tabel `majors`
 --
 
 INSERT INTO `majors` (`m_id`, `m_name`, `m_created_at`, `m_updated_at`, `m_deleted_at`, `m_restored_at`, `m_created_by`, `m_updated_by`, `m_deleted_by`, `m_restored_by`, `m_is_deleted`) VALUES
@@ -343,7 +342,7 @@ INSERT INTO `majors` (`m_id`, `m_name`, `m_created_at`, `m_updated_at`, `m_delet
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rekam_medis`
+-- Struktur dari tabel `rekam_medis`
 --
 
 CREATE TABLE `rekam_medis` (
@@ -356,21 +355,20 @@ CREATE TABLE `rekam_medis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `rekam_medis`
+-- Dumping data untuk tabel `rekam_medis`
 --
 
 INSERT INTO `rekam_medis` (`no_rekdis`, `nama_pasien`, `tgl_lahir`, `jenis_kelamin`, `alamat`, `status`) VALUES
 ('10101010', 'Denis Alexandria', '2000-01-18', 'Laki-laki', 'jalan wr supratman no 23 Lumajang', 'Terbaca'),
-('12345678', 'Risma Anggraeni Putri', '1999-08-06', 'Perempuan', 'jalan wr supratman no 11 Lumajang', 'Terbaca'),
+('12345678', 'Risma Anggraeni', '1999-08-06', 'Perempuan', 'jalan wr supratman no 11 Lumajang', 'Terbaca'),
 ('18147184', 'Aji Pratama', '2020-08-11', 'Laki-laki', 'adadljalkdjald', 'Terbaca'),
 ('20202020', 'Rahmad', '2020-08-19', 'Laki-laki', 'jalan raya puger gang kabul no 26', 'Terbaca'),
-('30303030', 'Hana Rizky Zafira', '2019-12-05', 'Perempuan', 'Jalan Raya Balung No 10 Jember', 'Terbaca'),
 ('81818181', 'Ardiyan Ramadhan', '1999-08-17', 'Laki-laki', 'Puger', 'Terbaca');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students`
+-- Struktur dari tabel `students`
 --
 
 CREATE TABLE `students` (
@@ -392,8 +390,8 @@ CREATE TABLE `students` (
   `s_ijazah` varchar(255) DEFAULT NULL,
   `s_skhun` varchar(255) DEFAULT NULL,
   `s_status` enum('Lengkap','Kurang','Belum Ada Data') DEFAULT 'Belum Ada Data',
-  `s_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `s_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `s_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `s_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `s_deleted_at` timestamp NULL DEFAULT NULL,
   `s_restored_at` timestamp NULL DEFAULT NULL,
   `s_created_by` char(5) DEFAULT NULL,
@@ -405,7 +403,7 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `students`
+-- Dumping data untuk tabel `students`
 --
 
 INSERT INTO `students` (`s_id`, `s_nisn`, `s_name`, `s_dob`, `s_gender`, `s_grade`, `s_mid`, `s_yi`, `s_yo`, `s_foto`, `s_kk`, `s_ktpa`, `s_ktpi`, `s_kips`, `s_sktm`, `s_ijazah`, `s_skhun`, `s_status`, `s_created_at`, `s_updated_at`, `s_deleted_at`, `s_restored_at`, `s_created_by`, `s_updated_by`, `s_deleted_by`, `s_restored_by`, `s_is_deleted`, `s_is_active`) VALUES
@@ -421,7 +419,7 @@ INSERT INTO `students` (`s_id`, `s_nisn`, `s_name`, `s_dob`, `s_gender`, `s_grad
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -436,11 +434,11 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_jabatan`, `no_hp`, `tanggal_buat`, `terakhir_login`) VALUES
-(1, 'admin', 'admin', 'Aji Pratama', 1, '090880', '2020-08-11 02:04:03', '2020-08-21 08:17:34'),
+(1, 'admin', 'admin', 'Aji Pratama', 1, '090880', '2020-08-11 02:04:03', '2020-08-22 06:17:20'),
 (3, 'rendiprata11', 'aaaaaaa', 'Rendhy Pratama', 3, '086828232832', '2020-08-10 19:06:55', '0000-00-00 00:00:00'),
 (4, 'aprat', '12345', 'Aji Pratama', 1, '0815157672399', '2020-08-11 04:02:13', '0000-00-00 00:00:00'),
 (5, 'admin11', '12345', 'Aji Pratama', 1, '090880', '2020-08-11 04:21:33', '0000-00-00 00:00:00');
@@ -448,7 +446,7 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `nama_lengkap`, `id_jabat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -459,8 +457,8 @@ CREATE TABLE `users` (
   `u_no_hp` varchar(13) DEFAULT NULL,
   `u_fname` varchar(50) DEFAULT NULL,
   `u_level` enum('Administrator','User Biasa') NOT NULL DEFAULT 'User Biasa',
-  `u_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `u_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `u_created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `u_updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `u_created_by` char(5) DEFAULT NULL,
   `u_updated_by` char(5) DEFAULT NULL,
   `u_password_updated_at` timestamp NULL DEFAULT NULL,
@@ -470,7 +468,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`u_id`, `u_name`, `u_pass`, `u_jabatan`, `u_no_hp`, `u_fname`, `u_level`, `u_created_at`, `u_updated_at`, `u_created_by`, `u_updated_by`, `u_password_updated_at`, `u_last_logged_in`, `u_ip_address`, `u_is_active`) VALUES
@@ -481,101 +479,101 @@ INSERT INTO `users` (`u_id`, `u_name`, `u_pass`, `u_jabatan`, `u_no_hp`, `u_fnam
 --
 
 --
--- Indexes for table `archived_documents`
+-- Indeks untuk tabel `archived_documents`
 --
 ALTER TABLE `archived_documents`
   ADD PRIMARY KEY (`ad_id`);
 
 --
--- Indexes for table `cabinets`
+-- Indeks untuk tabel `cabinets`
 --
 ALTER TABLE `cabinets`
   ADD PRIMARY KEY (`c_id`),
   ADD UNIQUE KEY `mname` (`c_name`);
 
 --
--- Indexes for table `cek_kelengkapan`
+-- Indeks untuk tabel `cek_kelengkapan`
 --
 ALTER TABLE `cek_kelengkapan`
   ADD PRIMARY KEY (`no_transaksi`);
 
 --
--- Indexes for table `ci_sessions`
+-- Indeks untuk tabel `ci_sessions`
 --
 ALTER TABLE `ci_sessions`
   ADD KEY `ci_sessions_timestamp` (`timestamp`);
 
 --
--- Indexes for table `documents`
+-- Indeks untuk tabel `documents`
 --
 ALTER TABLE `documents`
   ADD PRIMARY KEY (`d_id`),
   ADD UNIQUE KEY `d_map` (`d_kode_map`);
 
 --
--- Indexes for table `folders`
+-- Indeks untuk tabel `folders`
 --
 ALTER TABLE `folders`
   ADD PRIMARY KEY (`f_id`),
   ADD UNIQUE KEY `mname` (`f_name`);
 
 --
--- Indexes for table `jabatan`
+-- Indeks untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indexes for table `majors`
+-- Indeks untuk tabel `majors`
 --
 ALTER TABLE `majors`
   ADD PRIMARY KEY (`m_id`),
   ADD UNIQUE KEY `mname` (`m_name`);
 
 --
--- Indexes for table `rekam_medis`
+-- Indeks untuk tabel `rekam_medis`
 --
 ALTER TABLE `rekam_medis`
   ADD PRIMARY KEY (`no_rekdis`);
 
 --
--- Indexes for table `students`
+-- Indeks untuk tabel `students`
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`s_id`),
   ADD UNIQUE KEY `snisn` (`s_nisn`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`u_id`),
   ADD UNIQUE KEY `uname` (`u_name`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `cek_kelengkapan`
+-- AUTO_INCREMENT untuk tabel `cek_kelengkapan`
 --
 ALTER TABLE `cek_kelengkapan`
-  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `no_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `jabatan`
+-- AUTO_INCREMENT untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;

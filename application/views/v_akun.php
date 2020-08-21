@@ -47,8 +47,8 @@
                 <?php if($jabatan == 3 || $jabatan == 1) { ?>
                   <a href="<?php echo base_url('Akun/tambahAkun'); ?>" class="btn btn-success">Tambah Akun</a><br><br>
                   <?php } ?>
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
+                  <table id="example1" class="table table-bordered table-striped">
+                        <thead>
                
                   <td>No</td>
                   <td>Username</td>
